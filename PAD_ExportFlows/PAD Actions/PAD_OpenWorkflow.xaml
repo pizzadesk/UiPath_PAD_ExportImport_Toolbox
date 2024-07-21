@@ -164,7 +164,7 @@
         </Sequence>
       </uix:NCheckState.IfNotExists>
       <uix:NCheckState.Target>
-        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1200, 800" DesignTimeScaleFactor="1" Guid="c4e5da1e-c86c-4aae-95b3-6b981049d4ac" InformativeScreenshot="ef0960ebb389bfb4a44e7d69870b8d07.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop_*' title='*{0}*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1200, 800" DesignTimeScaleFactor="1" Guid="c4e5da1e-c86c-4aae-95b3-6b981049d4ac" InformativeScreenshot="ef0960ebb389bfb4a44e7d69870b8d07.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop*' title='Power Automate | *{0}*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive">
           <uix:TargetAnchorable.FuzzySelectorArgument>
             <InArgument x:TypeArguments="x:String">
               <Literal x:TypeArguments="x:String" Value="" />
