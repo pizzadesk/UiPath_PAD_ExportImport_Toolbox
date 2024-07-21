@@ -12,12 +12,11 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "ClipboardData&Sequence_18",
+        "SubflowNameDT&Sequence_7",
         "BackupPath&Sequence_7",
         "FlowName&Sequence_7",
         "SubflowDataFile&Sequence_18",
-        "SubflowNameDT&Sequence_18",
-        "SubflowName&Sequence_19"
+        "ClipboardData&Sequence_18"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -28,9 +27,9 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
+        "SubflowDataFile",
         "FlowName",
-        "SubflowName",
-        "ClipboardData"
+        "SubflowName"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
