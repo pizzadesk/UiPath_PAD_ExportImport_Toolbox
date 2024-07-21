@@ -144,7 +144,7 @@
             </uix:NClick>
             <uix:NGetText DisplayName="Get Text 'Subflow Panel'" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" TextString="[SubflowPanelContents]" Version="V3">
               <uix:NGetText.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="0, 0, 280, 239" DesignTimeScaleFactor="1" Guid="58b0029c-2e6b-4ae5-88d5-81907d9a1d80" InformativeScreenshot="5ac125a4229eeb64e250a1869c2455f9.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop*' title='Power Automate | *' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                <uix:TargetAnchorable DesignTimeRectangle="0, 0, 280, 203" DesignTimeScaleFactor="1" Guid="5c66057a-9e16-4375-84ca-22181ef4cdcb" InformativeScreenshot="76d346d7bc1a5e5a112e9cf5938148e4.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe!PAD.CONSOLE' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.FuzzySelectorArgument>
                     <InArgument x:TypeArguments="x:String">
                       <Literal x:TypeArguments="x:String" Value="" />
