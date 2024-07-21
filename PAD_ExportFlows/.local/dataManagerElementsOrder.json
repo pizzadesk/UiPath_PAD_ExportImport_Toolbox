@@ -12,8 +12,10 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "NewFile&Sequence_9",
-        "SubflowName&Sequence_8",
+        "NewFlowDataFile&Sequence_10",
+        "ClipboardData&Sequence_10",
+        "SubflowName&Sequence_10",
+        "SubflowNameDT&Sequence_8",
         "SubflowDataTable&Sequence_8",
         "BackupPath&Sequence_1",
         "FlowName&Sequence_8",
@@ -38,12 +40,23 @@
     {
       "Path": "PAD Actions/PAD_ExtractSubflowTabs.xaml",
       "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "ClipboardData",
+        "SubflowName",
+        "FlowName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PAD Actions/PAD_RetrieveSubflowNamesAsTable.xaml",
+      "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "ClipboardData&Sequence_2",
-        "SubflowName&Sequence_1"
+        "SubflowPanelContents&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
-        "SubflowDataTable",
+        "SubflowNameDT",
         "FlowName"
       ],
       "ConstantsSectionElementsOrder": [],
