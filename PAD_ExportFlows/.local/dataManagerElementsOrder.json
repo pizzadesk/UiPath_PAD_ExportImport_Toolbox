@@ -1,0 +1,53 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "NewFile&Sequence_9",
+        "SubflowName&Sequence_8",
+        "SubflowDataTable&Sequence_8",
+        "BackupPath&Sequence_1",
+        "FlowName&Sequence_8",
+        "RowIndex&Sequence_6",
+        "FlowTable&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PAD Actions/PAD_OpenWorkflow.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "FlowName",
+        "RowIndex"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PAD Actions/PAD_ExtractSubflowTabs.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ClipboardData&Sequence_2",
+        "SubflowName&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "SubflowDataTable",
+        "FlowName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
