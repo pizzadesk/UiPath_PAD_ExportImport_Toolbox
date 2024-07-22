@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1673,2363</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1672,2239</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PAD_ExtractSubflowTabs_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,14 +116,14 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_CreateSubflow" sap:VirtualizedContainerService.HintSize="610,2298" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PAD_CreateSubflow" sap:VirtualizedContainerService.HintSize="610,2174" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="548,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;PAD_CreateSubflow: START&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="548,1873" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="548,1749" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -212,7 +212,7 @@
             </ui:CommentOut>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Subflow name tab" sap:VirtualizedContainerService.HintSize="452,225" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="492, 88, 140, 40" DesignTimeScaleFactor="1" ElementType="TabPage" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='{0}*' role='page tab' /&gt;&quot;, SubflowName)]" FuzzySelectorArgument="&lt;ctrl name='Main, Has error,' role='page tab' automationid='' check:text='Main, Has error,' /&gt;" Guid="456de92c-26ef-4d85-9aad-fdf49a6a6d12" ImageBase64="" InformativeScreenshot="e3e3597f328247f72c2a5d9505926615.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop_*PAD.CONSOLE' title='Power Automate | {0}*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable DesignTimeRectangle="492, 88, 140, 40" DesignTimeScaleFactor="1" ElementType="TabPage" FullSelectorArgument="&lt;ctrl name='Main' role='page tab' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Main, Has error,' role='page tab' automationid='' check:text='Main, Has error,' /&gt;" Guid="456de92c-26ef-4d85-9aad-fdf49a6a6d12" ImageBase64="" InformativeScreenshot="e3e3597f328247f72c2a5d9505926615.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop_*PAD.CONSOLE' title='Power Automate | {0}*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -228,7 +228,7 @@
             <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_4" Text="[SubflowDataFile]" />
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Ctrl+A" sap:VirtualizedContainerService.HintSize="452,267" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="492, 88, 140, 40" DesignTimeScaleFactor="1" ElementType="TabPage" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='{0}' role='page tab' /&gt;&quot;, SubflowName)]" FuzzySelectorArgument="[string.Format(&quot;&lt;ctrl name='{0}' role='page tab' automationid='' check:text='{0}' /&gt;&quot;, SubflowName)]" Guid="d4732a79-47c8-4194-83bb-290362e85284" ImageBase64="" InformativeScreenshot="f46386f3a3dfd5c5d2affc8ce29f723d.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop*PAD.CONSOLE' title='Power Automate | *{0}' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable DesignTimeRectangle="492, 88, 140, 40" DesignTimeScaleFactor="1" ElementType="TabPage" FullSelectorArgument="&lt;ctrl name='Main' role='page tab' /&gt;" FuzzySelectorArgument="[string.Format(&quot;&lt;ctrl name='{0}' role='page tab' automationid='' check:text='{0}' /&gt;&quot;, SubflowName)]" Guid="d4732a79-47c8-4194-83bb-290362e85284" ImageBase64="" InformativeScreenshot="f46386f3a3dfd5c5d2affc8ce29f723d.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop*PAD.CONSOLE' title='Power Automate | *{0}' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NKeyboardShortcuts.Target>
               <uix:NKeyboardShortcuts.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">

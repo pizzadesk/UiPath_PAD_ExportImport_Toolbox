@@ -204,7 +204,7 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;Power Automate window is not Open, asking user to open Power Automate&quot;]" />
                 <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Ensure PAD is open" ChosenButton="[Choice]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please open Power Automate for Desktop and click OK in this message box.&quot;]" TopMost="True" />
-                <If Condition="[Choice.Equals(&quot;OK&quot;)]" sap:VirtualizedContainerService.HintSize="450,728" sap2010:WorkflowViewState.IdRef="If_6">
+                <If Condition="[Choice.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="450,728" sap2010:WorkflowViewState.IdRef="If_6">
                   <If.Then>
                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_25">
                       <sap:WorkflowViewStateService.ViewState>
