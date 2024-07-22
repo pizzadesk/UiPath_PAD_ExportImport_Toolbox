@@ -40,19 +40,6 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "PAD Actions/PAD_RetrieveSubflowNamesAsTable.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "SubflowPanelContents&Sequence_2"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "FlowName",
-        "SubflowNameDT"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "PAD Actions/PAD_CloseWorkflow.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
