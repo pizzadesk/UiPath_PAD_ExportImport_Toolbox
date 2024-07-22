@@ -12,11 +12,16 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "SubflowNameDT&Sequence_7",
+        "SubflowDataFile&Sequence_61",
+        "result&Sequence_25",
+        "SubflowDataFile&Sequence_56",
+        "result&Sequence_28",
+        "ListOfFlowNames&Sequence_7",
+        "PADOpen&Sequence_7",
+        "Choice&Sequence_32",
+        "FolderInfo&Sequence_7",
         "BackupPath&Sequence_7",
-        "FlowName&Sequence_7",
-        "SubflowDataFile&Sequence_18",
-        "ClipboardData&Sequence_18"
+        "FlowName&Sequence_7"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -48,20 +53,22 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "PAD Actions/PAD_AddNewFlow.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "idx&Sequence_2"
-      ],
-      "ArgumentsSectionElementsOrder": [],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "PAD Actions/PAD_CloseWorkflow.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "SubflowPanelContents&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "FlowName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PAD Actions/PAD_CreateNewFlow.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "idx&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
         "FlowName"
