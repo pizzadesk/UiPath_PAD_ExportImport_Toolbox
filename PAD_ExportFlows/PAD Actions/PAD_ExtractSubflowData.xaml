@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1181,2582</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1847,2110</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PAD_ExtractSubflowTabs_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,20 +114,20 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_ExtractSubflowTabs" sap:VirtualizedContainerService.HintSize="512,2517" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PAD_ExtractSubflowTabs" sap:VirtualizedContainerService.HintSize="512,2045" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;PAD_ExtractSubflowTabs: START&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="450,2092" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="450,1620" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1893" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1421" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,33 +179,6 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Center of Subflow'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="367, 129, 1771, 1225" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='{0}' role='page tab' /&gt;&lt;ctrl name='Actions' /&gt;&quot;, SubflowName)]" FuzzySelectorArgument="&lt;ctrl name='Main' role='page tab' /&gt;&lt;ctrl name='Actions' role='list' automationid='ProgramItemsListBoxActions' /&gt;" Guid="b9db0b1d-99f5-48ad-984c-6bf1b30e33f8" InformativeScreenshot="f8f73665c358e32d730c1c5c4f573383.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop*' title='Power Automate | *' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts Ctrl+A" sap:VirtualizedContainerService.HintSize="354,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(ctrl)]a[u(ctrl)][u(hk)]" Version="V3">
-              <uix:NKeyboardShortcuts.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NKeyboardShortcuts.VerifyOptions>
-            </uix:NKeyboardShortcuts>
             <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_3">
               <ui:SetToClipboard.Text>
                 <InArgument x:TypeArguments="x:String">
