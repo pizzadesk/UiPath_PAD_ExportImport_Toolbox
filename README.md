@@ -5,9 +5,9 @@ Welcome to the Windows-based UiPath Activities for PAD flow Export and Import re
 
 ## Supported Activities
 
-- **Export all flows in My Flows section of Power Automate for Desktop, looping through each Subflow and copying it's contents to save into a .txt file in a specified Backup folder.
+**Export all flows in My Flows section of Power Automate for Desktop, looping through each Subflow and copying it's contents to save into a .txt file in a specified Backup folder.
 
-- **Import specific or all flows into My Flows section of Power Automate for Desktop, looping through each Subflow and pasting it's contents from previouslt saved .txt file from a specified Backup folder.
+**Import specific or all flows into My Flows section of Power Automate for Desktop, looping through each Subflow and pasting it's contents from previouslt saved .txt file from a specified Backup folder.
 
 - 
 
