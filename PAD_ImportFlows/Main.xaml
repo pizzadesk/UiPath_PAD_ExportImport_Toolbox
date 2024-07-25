@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1867,11928</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1435.9999999999998,10753</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,70 +116,54 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1446,11863" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1446,10688" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="BackupPath" />
       <Variable x:TypeArguments="x:String" Name="FlowName" />
       <Variable x:TypeArguments="si:DirectoryInfo" Name="FolderInfo" />
       <Variable x:TypeArguments="x:Boolean" Name="PADOpen" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="ListOfFlowNames" />
-      <Variable x:TypeArguments="x:String" Name="PADType" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1384,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_ImportFlows: START&quot;]" />
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1384,324" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please select which PAD type is installed on your PC and will be used for Flow export" OptionsString="Microsoft Store (MSIX);Power Automate MSI installer (MSI)" Title="Choose PAD type">
-      <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:String">[PADType]</OutArgument>
-      </ui:InputDialog.Result>
-    </ui:InputDialog>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1384,173" sap2010:WorkflowViewState.IdRef="LogMessage_33" Message="[&quot;PAD Type: &quot;+PADType]" />
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[PADType]" sap:VirtualizedContainerService.HintSize="1384,190" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Assign x:Key="Microsoft Store (MSIX)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_14">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[PADWindowSelector]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">cls='HwndWrapper*'</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign x:Key="Power Automate MSI installer (MSI)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_15">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[PADWindowSelector]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">["cls='HwndWrapper*'"]</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Switch>
-    <ui:SelectFolder DisplayName="Browse For Folder" sap:VirtualizedContainerService.HintSize="1384,111" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[BackupPath]" />
-    <ui:GetFolderInfoX DisplayName="Get Folder Info" FolderPath="[BackupPath]" sap:VirtualizedContainerService.HintSize="1384,165" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_2" Output="[FolderInfo]" ThrowIfNotExists="False" />
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not PADOpen]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1384,1757" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1384,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_ImportFlows: START&quot;]" />
+    <Assign DisplayName="Assign universal PAD selector" sap:VirtualizedContainerService.HintSize="1384,115" sap2010:WorkflowViewState.IdRef="Assign_18">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[PADWindowSelector]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">cls='HwndWrapper*'</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" Caption="Select PAD Flow folder" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1384,118" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;Please select the folder with PAD Flow you would like to import. If you would like to import all previously exported PAD flows, please select the root folder that contains all exported Flows&quot;]" />
+    <ui:SelectFolder DisplayName="Browse For Folder" sap:VirtualizedContainerService.HintSize="1384,112" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[BackupPath]" />
+    <ui:GetFolderInfoX DisplayName="Get Folder Info" FolderPath="[BackupPath]" sap:VirtualizedContainerService.HintSize="1384,167" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_2" Output="[FolderInfo]" ThrowIfNotExists="False" />
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not PADOpen]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1384,458" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1078,1611" sap2010:WorkflowViewState.IdRef="Sequence_33">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_33">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1016,173" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[&quot;Checking if PAD is open&quot;]" />
-          <uix:NCheckState DisplayName="Check App State 'Power Automate'" Exists="[PADOpen]" sap:VirtualizedContainerService.HintSize="1016,1350" sap2010:WorkflowViewState.IdRef="NCheckState_4" Version="V3">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[&quot;Checking if PAD is open&quot;]" />
+          <uix:NCheckState DisplayName="Check App State 'Power Automate'" Exists="[PADOpen]" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="NCheckState_4" Version="V3">
             <uix:NCheckState.IfExists>
-              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,315" sap2010:WorkflowViewState.IdRef="Sequence_34">
+              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,317" sap2010:WorkflowViewState.IdRef="Sequence_34">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Power Automate window is Open, proceeding&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,177" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Power Automate window is Open, proceeding&quot;]" />
                 <ui:Break sap:VirtualizedContainerService.HintSize="388,50" sap2010:WorkflowViewState.IdRef="Break_1" />
               </Sequence>
             </uix:NCheckState.IfExists>
             <uix:NCheckState.IfNotExists>
-              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="512,1110" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="512,1118" sap2010:WorkflowViewState.IdRef="Sequence_32">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="Choice" />
                 </Sequence.Variables>
@@ -188,27 +172,27 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[&quot;Power Automate window is not Open, asking user to open Power Automate&quot;]" />
-                <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Ensure PAD is open" ChosenButton="[Choice]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please open Power Automate for Desktop and click OK in this message box.&quot;]" TopMost="True" />
-                <If Condition="[Choice.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="450,728" sap2010:WorkflowViewState.IdRef="If_2">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[&quot;Power Automate window is not Open, asking user to open Power Automate&quot;]" />
+                <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Ensure PAD is open" ChosenButton="[Choice]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,118" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please open Power Automate for Desktop and click OK in this message box.&quot;]" TopMost="True" />
+                <If Condition="[Choice.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="450,733" sap2010:WorkflowViewState.IdRef="If_2">
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,256" sap2010:WorkflowViewState.IdRef="Sequence_35">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_16" Message="[&quot;User clicked on OK, checking of PAD is open&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,168" sap2010:WorkflowViewState.IdRef="LogMessage_16" Message="[&quot;User clicked on OK, checking of PAD is open&quot;]" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,313" sap2010:WorkflowViewState.IdRef="Sequence_36">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;User clicked Cancel, quitting the process&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,177" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;User clicked Cancel, quitting the process&quot;]" />
                       <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_2" />
                     </Sequence>
                   </If.Else>
@@ -226,7 +210,7 @@
             </uix:NCheckState.Target>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -234,25 +218,25 @@
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
     </ui:InterruptibleDoWhile>
-    <If Condition="[PADOpen]" DisplayName="If PAD is open" sap:VirtualizedContainerService.HintSize="1384,8718" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[PADOpen]" DisplayName="If PAD is open" sap:VirtualizedContainerService.HintSize="1384,9289" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1350,8296" sap2010:WorkflowViewState.IdRef="Sequence_40">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1350,8864" sap2010:WorkflowViewState.IdRef="Sequence_40">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[FolderInfo.GetDirectories.Count=0]" sap:VirtualizedContainerService.HintSize="1288,8208" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[FolderInfo.GetDirectories.Count=0]" sap:VirtualizedContainerService.HintSize="1288,8776" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1158,3838" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1158,4119" sap2010:WorkflowViewState.IdRef="Sequence_19">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1096,173" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;No subfolders found, assuming Backup Path is leading to one Flow to import&quot;]" />
-                <Assign sap:VirtualizedContainerService.HintSize="1096,114" sap2010:WorkflowViewState.IdRef="Assign_7">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1096,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;No subfolders found, assuming Backup Path is leading to one Flow to import&quot;]" />
+                <Assign sap:VirtualizedContainerService.HintSize="1096,115" sap2010:WorkflowViewState.IdRef="Assign_7">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[FlowName]</OutArgument>
                   </Assign.To>
@@ -260,13 +244,13 @@
                     <InArgument x:TypeArguments="x:String">[FolderInfo.Name]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1096,3463" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1096,3741" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1062,3273" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1062,3551" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="result" />
                         </Sequence.Variables>
@@ -276,7 +260,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="1000,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="1000,227" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable CVScreenId="75512038-d042-43b1-9030-07b5cca22ff0" CvTextArea="107, 129, 57, 16" CvTextArgument="My flows" CvType="Text" DesignTimeRectangle="108, 126, 55, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' automationid='' check:text='My flows' /&gt;" Guid="4ea7b534-1a86-4d07-9e0a-ebc41d1b5922" InformativeScreenshot="14e7d67154ef99d087485907037b3470.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                           </uix:NClick.Target>
@@ -291,16 +275,16 @@
                             </uix:VerifyExecutionOptions>
                           </uix:NClick.VerifyOptions>
                         </uix:NClick>
-                        <uix:NCheckState DisplayName="Check App State 'You don't'" sap:VirtualizedContainerService.HintSize="1000,621" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                        <uix:NCheckState DisplayName="Check App State 'You don't'" sap:VirtualizedContainerService.HintSize="1000,626" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                           <uix:NCheckState.IfExists>
-                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,372" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,375" sap2010:WorkflowViewState.IdRef="Sequence_68">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_32" Message="[&quot;No flows present&quot;]" />
-                              <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_12">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_32" Message="[&quot;No flows present&quot;]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_12">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="scg:List(x:String)">[ListOfFlowNames]</OutArgument>
                                 </Assign.To>
@@ -311,13 +295,13 @@
                             </Sequence>
                           </uix:NCheckState.IfExists>
                           <uix:NCheckState.IfNotExists>
-                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,322" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,324" sap2010:WorkflowViewState.IdRef="Sequence_69">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get Attribute 'items' of Flow List" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                              <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get Attribute 'items' of Flow List" sap:VirtualizedContainerService.HintSize="388,234" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                                 <uix:NGetAttributeGeneric.Target>
                                   <uix:TargetAnchorable DesignTimeRectangle="99, 184, 1174, 1157" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' role='list' /&gt;" Guid="e16b44f3-01d4-4777-8df9-8be3fc827ac0" ImageBase64="" InformativeScreenshot="225103f3dcf3062a13945e562dc8505e.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                                 </uix:NGetAttributeGeneric.Target>
@@ -328,7 +312,7 @@
                             <uix:TargetAnchorable CVScreenId="2c8ee97d-5e80-47f2-9007-06865e6c0984" CvTextArea="472, 846, 334, 13" CvTextArgument="You don't have any flows. Create a flow to get started." CvType="Text" DesignTimeRectangle="474, 842, 332, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='DescriptionText' name='You don&amp;apos;t have any flows. Create a flow to get started.' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='DescriptionText' name='You don&amp;apos;t have any flows. Create a flow to get started.' role='text' check:text='You don&amp;apos;t have any flows. Create a flow to get started.' /&gt;" Guid="6b74f8ae-089f-43d9-b029-1c4162703ace" InformativeScreenshot="05f133c32b74e88f834072eee9574b5d.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                           </uix:NCheckState.Target>
                         </uix:NCheckState>
-                        <Assign sap:VirtualizedContainerService.HintSize="1000,114" sap2010:WorkflowViewState.IdRef="Assign_10">
+                        <Assign sap:VirtualizedContainerService.HintSize="1000,115" sap2010:WorkflowViewState.IdRef="Assign_10">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[result]</OutArgument>
                           </Assign.To>
@@ -336,15 +320,15 @@
                             <InArgument x:TypeArguments="x:String">[ListOfFlowNames.FirstOrDefault(Function(item) item = FlowName)]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <If Condition="[String.IsNullOrEmpty(result)]" sap:VirtualizedContainerService.HintSize="1000,2223" sap2010:WorkflowViewState.IdRef="If_7">
+                        <If Condition="[String.IsNullOrEmpty(result)]" DisplayName="If no flows present in My flows" sap:VirtualizedContainerService.HintSize="1000,2493" sap2010:WorkflowViewState.IdRef="If_7">
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,1689" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,1955" sap2010:WorkflowViewState.IdRef="Sequence_64">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="530,225" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="530,227" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable DesignTimeRectangle="88, 32, 90, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='CreateNewFlowButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='CreateNewFlowButton' role='push button' check:text='New flow' /&gt;" Guid="1ecf3272-ffe4-4b0b-8691-5ed35068b7da" ImageBase64="" InformativeScreenshot="66a7735b1bf2e48dd1bfa3c5fe665335.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                                 </uix:NClick.Target>
@@ -359,7 +343,7 @@
                                   </uix:VerifyExecutionOptions>
                                 </uix:NClick.VerifyOptions>
                               </uix:NClick>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CreateNewFlow - Invoke Workflow File (PAD Actions\PAD_CreateNewFlow.xaml)" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CreateNewFlow.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CreateNewFlow - Invoke Workflow File (PAD Actions\PAD_CreateNewFlow.xaml)" sap:VirtualizedContainerService.HintSize="530,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CreateNewFlow.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
@@ -371,7 +355,8 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:InvokeWorkflowFile>
-                              <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="530,977" sap2010:WorkflowViewState.IdRef="ForEachFileX_7" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                              <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="530,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                              <ui:ForEachFileX DisplayName="For Each File in Folder, create a subflow" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="530,1112" sap2010:WorkflowViewState.IdRef="ForEachFileX_7" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
                                 <ui:ForEachFileX.Body>
                                   <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                                     <ActivityAction.Argument1>
@@ -380,7 +365,7 @@
                                     <ActivityAction.Argument2>
                                       <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                                     </ActivityAction.Argument2>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,685" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,815" sap2010:WorkflowViewState.IdRef="Sequence_61">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="SubflowDataFile" />
                                       </Sequence.Variables>
@@ -390,9 +375,9 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_28" Message="[&quot;Importing Workflow: &quot;+CurrentFile.Name]" />
-                                      <ui:ReadTextFile File="{x:Null}" Content="[SubflowDataFile]" DisplayName="Read Subflow Data File" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_6" />
-                                      <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_28" Message="[&quot;Importing Workflow: &quot;+CurrentFile.Name]" />
+                                      <ui:ReadTextFile File="{x:Null}" Content="[SubflowDataFile]" DisplayName="Read Subflow Data File" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="ReadTextFile_6" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="Assign_16">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[SubflowDataFile]</OutArgument>
                                         </Assign.To>
@@ -402,7 +387,7 @@
     SubflowDataFile)]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CreateSubflowFromDataFile - Invoke Workflow File (PAD Actions\PAD_CreateSubflowFromDataFile.xaml)" sap:VirtualizedContainerService.HintSize="434,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CreateSubflowFromDataFile.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CreateSubflowFromDataFile - Invoke Workflow File (PAD Actions\PAD_CreateSubflowFromDataFile.xaml)" sap:VirtualizedContainerService.HintSize="434,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CreateSubflowFromDataFile.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="SubflowName">[CurrentFile.Name.Replace(".txt","")]</InArgument>
@@ -410,6 +395,7 @@
                                           <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
+                                      <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Delay_2" />
                                     </Sequence>
                                   </ActivityAction>
                                 </ui:ForEachFileX.Body>
@@ -420,7 +406,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:ForEachFileX>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CloseWorkflow - Invoke Workflow File (PAD Actions\PAD_CloseWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="530,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CloseWorkflow.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CloseWorkflow - Invoke Workflow File (PAD Actions\PAD_CloseWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="530,198" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CloseWorkflow.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
@@ -435,14 +421,14 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,371" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="Sequence_65">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_29" Message="[&quot;Flow with the name &quot;+FlowName+&quot; already exists in My Flows list, skipping&quot;]" />
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Flow with the name &quot;+FlowName+&quot; already exists in My Flows list. For the sake of integrity, skipping import of this flow&quot;]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,177" sap2010:WorkflowViewState.IdRef="LogMessage_29" Message="[&quot;Flow with the name &quot;+FlowName+&quot; already exists in My Flows list, skipping&quot;]" />
+                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,109" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Flow with the name &quot;+FlowName+&quot; already exists in My Flows list. For the sake of integrity, skipping import of this flow&quot;]" />
                             </Sequence>
                           </If.Else>
                         </If>
@@ -462,15 +448,15 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1254,4209" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1254,4495" sap2010:WorkflowViewState.IdRef="Sequence_20">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1192,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Multiple subfolders found, assuming import of multiple Flows&quot;]" />
-                <ui:ForEachFolderX DisplayName="For Each Folder in Folder" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="1192,3948" sap2010:WorkflowViewState.IdRef="ForEachFolderX_2" IncludeSubFolders="False" OrderBy="NameAscFirst" SkipFoldersWithoutPermission="False">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1192,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Multiple subfolders found, assuming import of multiple Flows&quot;]" />
+                <ui:ForEachFolderX DisplayName="For Each Folder in Folder" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="1192,4232" sap2010:WorkflowViewState.IdRef="ForEachFolderX_2" IncludeSubFolders="False" OrderBy="NameAscFirst" SkipFoldersWithoutPermission="False">
                   <ui:ForEachFolderX.Body>
                     <ActivityAction x:TypeArguments="si:DirectoryInfo, x:Int32">
                       <ActivityAction.Argument1>
@@ -479,13 +465,13 @@
                       <ActivityAction.Argument2>
                         <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                       </ActivityAction.Argument2>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1158,3665" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1158,3944" sap2010:WorkflowViewState.IdRef="Sequence_29">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="1096,114" sap2010:WorkflowViewState.IdRef="Assign_8">
+                        <Assign sap:VirtualizedContainerService.HintSize="1096,115" sap2010:WorkflowViewState.IdRef="Assign_8">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[FlowName]</OutArgument>
                           </Assign.To>
@@ -493,13 +479,13 @@
                             <InArgument x:TypeArguments="x:String">[CurrentFolder.Name]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1096,3463" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1096,3741" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1062,3273" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1062,3551" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="result" />
                                 </Sequence.Variables>
@@ -509,7 +495,7 @@
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="1000,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="1000,227" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                                   <uix:NClick.Target>
                                     <uix:TargetAnchorable CVScreenId="75512038-d042-43b1-9030-07b5cca22ff0" CvTextArea="107, 129, 57, 16" CvTextArgument="My flows" CvType="Text" DesignTimeRectangle="108, 126, 55, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' automationid='' check:text='My flows' /&gt;" Guid="4ea7b534-1a86-4d07-9e0a-ebc41d1b5922" InformativeScreenshot="14e7d67154ef99d087485907037b3470.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                                   </uix:NClick.Target>
@@ -524,16 +510,16 @@
                                     </uix:VerifyExecutionOptions>
                                   </uix:NClick.VerifyOptions>
                                 </uix:NClick>
-                                <uix:NCheckState DisplayName="Check App State 'You don't'" sap:VirtualizedContainerService.HintSize="1000,621" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                                <uix:NCheckState DisplayName="Check App State 'You don't'" sap:VirtualizedContainerService.HintSize="1000,626" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                                   <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,372" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,375" sap2010:WorkflowViewState.IdRef="Sequence_66">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_31" Message="[&quot;No flows present&quot;]" />
-                                      <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_31" Message="[&quot;No flows present&quot;]" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_13">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="scg:List(x:String)">[ListOfFlowNames]</OutArgument>
                                         </Assign.To>
@@ -544,13 +530,13 @@
                                     </Sequence>
                                   </uix:NCheckState.IfExists>
                                   <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,322" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,324" sap2010:WorkflowViewState.IdRef="Sequence_67">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get Attribute 'items' of Flow List" sap:VirtualizedContainerService.HintSize="388,232" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                                      <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get Attribute 'items' of Flow List" sap:VirtualizedContainerService.HintSize="388,234" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                                         <uix:NGetAttributeGeneric.Target>
                                           <uix:TargetAnchorable DesignTimeRectangle="99, 184, 1174, 1157" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' role='list' /&gt;" Guid="e16b44f3-01d4-4777-8df9-8be3fc827ac0" ImageBase64="" InformativeScreenshot="225103f3dcf3062a13945e562dc8505e.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                                         </uix:NGetAttributeGeneric.Target>
@@ -561,7 +547,7 @@
                                     <uix:TargetAnchorable CVScreenId="2c8ee97d-5e80-47f2-9007-06865e6c0984" CvTextArea="472, 846, 334, 13" CvTextArgument="You don't have any flows. Create a flow to get started." CvType="Text" DesignTimeRectangle="474, 842, 332, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='DescriptionText' name='You don&amp;apos;t have any flows. Create a flow to get started.' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='DescriptionText' name='You don&amp;apos;t have any flows. Create a flow to get started.' role='text' check:text='You don&amp;apos;t have any flows. Create a flow to get started.' /&gt;" Guid="6b74f8ae-089f-43d9-b029-1c4162703ace" InformativeScreenshot="05f133c32b74e88f834072eee9574b5d.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                                   </uix:NCheckState.Target>
                                 </uix:NCheckState>
-                                <Assign sap:VirtualizedContainerService.HintSize="1000,114" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                <Assign sap:VirtualizedContainerService.HintSize="1000,115" sap2010:WorkflowViewState.IdRef="Assign_9">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[result]</OutArgument>
                                   </Assign.To>
@@ -569,15 +555,15 @@
                                     <InArgument x:TypeArguments="x:String">[ListOfFlowNames.FirstOrDefault(Function(item) item = FlowName)]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <If Condition="[String.IsNullOrEmpty(result)]" sap:VirtualizedContainerService.HintSize="1000,2223" sap2010:WorkflowViewState.IdRef="If_6">
+                                <If Condition="[String.IsNullOrEmpty(result)]" sap:VirtualizedContainerService.HintSize="1000,2493" sap2010:WorkflowViewState.IdRef="If_6">
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,1689" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="592,1955" sap2010:WorkflowViewState.IdRef="Sequence_59">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="530,225" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="530,227" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                                         <uix:NClick.Target>
                                           <uix:TargetAnchorable DesignTimeRectangle="88, 32, 90, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='CreateNewFlowButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='CreateNewFlowButton' role='push button' check:text='New flow' /&gt;" Guid="1ecf3272-ffe4-4b0b-8691-5ed35068b7da" ImageBase64="" InformativeScreenshot="66a7735b1bf2e48dd1bfa3c5fe665335.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                                         </uix:NClick.Target>
@@ -592,7 +578,7 @@
                                           </uix:VerifyExecutionOptions>
                                         </uix:NClick.VerifyOptions>
                                       </uix:NClick>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CreateNewFlow - Invoke Workflow File (PAD Actions\PAD_CreateNewFlow.xaml)" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CreateNewFlow.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CreateNewFlow - Invoke Workflow File (PAD Actions\PAD_CreateNewFlow.xaml)" sap:VirtualizedContainerService.HintSize="530,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CreateNewFlow.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
@@ -604,7 +590,8 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:InvokeWorkflowFile>
-                                      <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[CurrentFolder.FullName]" sap:VirtualizedContainerService.HintSize="530,977" sap2010:WorkflowViewState.IdRef="ForEachFileX_6" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                                      <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="530,123" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                                      <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[CurrentFolder.FullName]" sap:VirtualizedContainerService.HintSize="530,1112" sap2010:WorkflowViewState.IdRef="ForEachFileX_6" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
                                         <ui:ForEachFileX.Body>
                                           <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                                             <ActivityAction.Argument1>
@@ -613,7 +600,7 @@
                                             <ActivityAction.Argument2>
                                               <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                                             </ActivityAction.Argument2>
-                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,685" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,815" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="SubflowDataFile" />
                                               </Sequence.Variables>
@@ -623,9 +610,9 @@
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_25" Message="[&quot;Importing Workflow: &quot;+CurrentFile.Name]" />
-                                              <ui:ReadTextFile File="{x:Null}" Content="[SubflowDataFile]" DisplayName="Read Subflow Data File" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_5" />
-                                              <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_25" Message="[&quot;Importing Workflow: &quot;+CurrentFile.Name]" />
+                                              <ui:ReadTextFile File="{x:Null}" Content="[SubflowDataFile]" DisplayName="Read Subflow Data File" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="ReadTextFile_5" />
+                                              <Assign sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="Assign_17">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:String">[SubflowDataFile]</OutArgument>
                                                 </Assign.To>
@@ -635,7 +622,7 @@
     SubflowDataFile)]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CreateSubflowFromDataFile - Invoke Workflow File (PAD Actions\PAD_CreateSubflowFromDataFile.xaml)" sap:VirtualizedContainerService.HintSize="434,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CreateSubflowFromDataFile.xaml">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CreateSubflowFromDataFile - Invoke Workflow File (PAD Actions\PAD_CreateSubflowFromDataFile.xaml)" sap:VirtualizedContainerService.HintSize="434,207" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CreateSubflowFromDataFile.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="SubflowName">[CurrentFile.Name.Replace(".txt","")]</InArgument>
@@ -643,6 +630,7 @@
                                                   <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
+                                              <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Delay_4" />
                                             </Sequence>
                                           </ActivityAction>
                                         </ui:ForEachFileX.Body>
@@ -653,7 +641,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:ForEachFileX>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CloseWorkflow - Invoke Workflow File (PAD Actions\PAD_CloseWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="530,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CloseWorkflow.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CloseWorkflow - Invoke Workflow File (PAD Actions\PAD_CloseWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="530,198" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CloseWorkflow.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
@@ -668,14 +656,14 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,371" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="Sequence_60">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_26" Message="[&quot;Flow with the name &quot;+FlowName+&quot; already exists in My Flows list, skipping&quot;]" />
-                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Flow with the name &quot;+FlowName+&quot; already exists in My Flows list. For the sake of integrity, skipping import of this flow&quot;]" />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,177" sap2010:WorkflowViewState.IdRef="LogMessage_26" Message="[&quot;Flow with the name &quot;+FlowName+&quot; already exists in My Flows list, skipping&quot;]" />
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,109" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Flow with the name &quot;+FlowName+&quot; already exists in My Flows list. For the sake of integrity, skipping import of this flow&quot;]" />
                                     </Sequence>
                                   </If.Else>
                                 </If>
@@ -702,17 +690,17 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_41">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_41">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_34" Message="[&quot;Power Automate for Desktop was not opened&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_34" Message="[&quot;Power Automate for Desktop did not open&quot;]" />
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1384,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;PAD_ImportFlows: END&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1384,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;PAD_ImportFlows: END&quot;]" />
   </Sequence>
 </Activity>

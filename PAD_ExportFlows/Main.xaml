@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1776,9438</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1164,8288</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -199,15 +199,13 @@
       <AssemblyReference>UiPath.Wizards</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1174,9373" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1174,8223" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="BackupPath" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="ListOfFlowNames" />
-      <Variable x:TypeArguments="x:Int32" Name="RowIndex" />
       <Variable x:TypeArguments="si:DirectoryInfo" Name="FolderInfo" />
       <Variable x:TypeArguments="x:Boolean" Name="PADOpen" />
       <Variable x:TypeArguments="x:String" Name="Choice" />
-      <Variable x:TypeArguments="x:String" Name="PADType" />
       <Variable x:TypeArguments="x:String" Name="PADWindowSelector" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -216,33 +214,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1112,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_ExportFlows: START&quot;]" />
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1112,324" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Please select which PAD type is installed on your PC and will be used for Flow export" OptionsString="Microsoft Store (MSIX);Power Automate MSI installer (MSI)" Title="Choose PAD type">
-      <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:String">[PADType]</OutArgument>
-      </ui:InputDialog.Result>
-    </ui:InputDialog>
-    <If Condition="[PADType.equals(&quot;Power Automate MSI installer (MSI)&quot;)]" sap:VirtualizedContainerService.HintSize="1112,469" sap2010:WorkflowViewState.IdRef="If_8">
-      <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,196" sap2010:WorkflowViewState.IdRef="Sequence_30">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Power Automate for Desktop - MSI Installer version automation works best if robot is launched with Administrator privileges. If there is unexpected behaviour, please try starting the robot with Administrator privileges&quot;]" />
-        </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_31">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </Sequence>
-      </If.Else>
-    </If>
-    <Assign sap:VirtualizedContainerService.HintSize="1112,114" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign DisplayName="Assign universal PAD selector" sap:VirtualizedContainerService.HintSize="1112,114" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[PADWindowSelector]</OutArgument>
       </Assign.To>
@@ -250,18 +222,6 @@
         <InArgument x:TypeArguments="x:String">cls='HwndWrapper*'</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage sap:VirtualizedContainerService.HintSize="1112,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;PAD Type: &quot;+PADType]" />
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[PADType]" sap:VirtualizedContainerService.HintSize="1112,194" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <x:Null x:Key="Microsoft Store (MSIX)" />
-      <Assign x:Key="Power Automate MSI installer (MSI)" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_12">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[PADWindowSelector]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">["cls='HwndWrapper*'"]</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Switch>
     <ui:SelectFolder DisplayName="Browse For Backup Folder" sap:VirtualizedContainerService.HintSize="1112,111" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[BackupPath]" />
     <ui:GetFolderInfoX DisplayName="Get Folder Info" FolderPath="[BackupPath]" sap:VirtualizedContainerService.HintSize="1112,165" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_2" Output="[FolderInfo]" ThrowIfNotExists="False" />
     <If Condition="[FolderInfo.GetFiles.Count&gt;0 or FolderInfo.GetDirectories.Count&gt;0]" DisplayName="If Backup Folder contains files or folders, warn user" sap:VirtualizedContainerService.HintSize="1112,1610" sap2010:WorkflowViewState.IdRef="If_3">
@@ -381,9 +341,9 @@
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
     </ui:InterruptibleDoWhile>
-    <If Condition="[PADOpen]" DisplayName="If PAD is open" sap:VirtualizedContainerService.HintSize="1112,4147" sap2010:WorkflowViewState.IdRef="If_7">
+    <If Condition="[PADOpen]" DisplayName="If PAD is open" sap:VirtualizedContainerService.HintSize="1112,4157" sap2010:WorkflowViewState.IdRef="If_7">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="688,3725" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="688,3735" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -458,13 +418,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[RowIndex]" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="626,2384" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListOfFlowNames]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="626,2394" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListOfFlowNames]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,2247" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,2257" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="FlowName" />
                     <Variable x:TypeArguments="sd:DataTable" Name="SubflowNameDT" />
@@ -474,15 +434,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Increment RowIndex by 1 since PAD list does not follow zero-index" sap:VirtualizedContainerService.HintSize="530,113" sap2010:WorkflowViewState.IdRef="Assign_8">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[RowIndex]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[RowIndex+1]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Assign DisplayName="Assign Flow Name from Table" sap:VirtualizedContainerService.HintSize="530,113" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign DisplayName="Assign Flow Name from Table" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_9">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[FlowName]</OutArgument>
                     </Assign.To>
@@ -493,11 +445,11 @@
                   <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder named with Flow name" sap:VirtualizedContainerService.HintSize="530,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[BackupPath+&quot;\&quot;+FlowName]" />
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_OpenWorkflow - Invoke Workflow File (PAD_OpenWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="PAD Actions\PAD_OpenWorkflow.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="RowIndex">[RowIndex]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
+                  <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="530,122" sap2010:WorkflowViewState.IdRef="Delay_2" />
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_RetrieveSubflowNamesAsTable - Invoke Workflow File (PAD Actions\PAD_RetrieveListOfSubflowNames.xaml)" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="PAD Actions\PAD_RetrieveSubflowNamesAsTable.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>

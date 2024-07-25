@@ -13,13 +13,11 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "PADWindowSelector&Sequence_1",
-        "PADType&Sequence_1",
         "Choice&Sequence_1",
         "PADOpen&Sequence_1",
         "FolderInfo&Sequence_1",
         "SubflowNameDT&Sequence_12",
         "FlowName&Sequence_12",
-        "RowIndex&Sequence_1",
         "SubflowName&Sequence_13",
         "NewFlowDataFile&Sequence_13",
         "ListOfFlowNames&Sequence_1",
@@ -39,8 +37,7 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "PADWindowSelector",
-        "FlowName",
-        "RowIndex"
+        "FlowName"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -75,9 +72,7 @@
     {
       "Path": "PAD Actions/PAD_CloseWorkflow.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "SubflowPanelContents&Sequence_2"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
         "PADWindowSelector",
         "FlowName"
