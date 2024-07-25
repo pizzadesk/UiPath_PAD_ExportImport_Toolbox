@@ -21,12 +21,13 @@
         "FlowName&Sequence_12",
         "RowIndex&Sequence_1",
         "SubflowName&Sequence_13",
-        "ClipboardData&Sequence_13",
         "NewFlowDataFile&Sequence_13",
         "ListOfFlowNames&Sequence_1",
         "BackupPath&Sequence_1"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "CopiedData"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -49,8 +50,8 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
+        "CopiedData",
         "PADWindowSelector",
-        "ClipboardData",
         "SubflowName",
         "FlowName"
       ],
