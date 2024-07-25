@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1673,6808" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1867,8857" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>GlobalConstantsNamespace</x:String>
@@ -37,6 +37,80 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>System.IO</x:String>
+      <x:String>UiPath.Core.Activities.Design</x:String>
+      <x:String>UiPath.Core.Activities.Design.Windows</x:String>
+      <x:String>UiPath.Core.Activities.Design.ViewModels</x:String>
+      <x:String>UiPath.Core.Activities.Design.Services</x:String>
+      <x:String>UiPath.Core.Activities.Design.Scrape.Tesseract</x:String>
+      <x:String>UiPath.Core.Activities.Design.Scrape.MicrosoftAzure</x:String>
+      <x:String>UiPath.Core.Activities.Design.Scrape.GoogleCloud</x:String>
+      <x:String>UiPath.Core.Activities.Design.Properties</x:String>
+      <x:String>UiPath.Core.Activities.Design.Editors</x:String>
+      <x:String>UiPath.Core.Activities.Design.SAP</x:String>
+      <x:String>UiPath.Core.Activities.Design.Designers.SAP</x:String>
+      <x:String>UiPath.Core.Activities.Design.Designers.ExportUiTree</x:String>
+      <x:String>UiPath.Core.Activities.Design.Controls</x:String>
+      <x:String>UiPath.Core.Activities.Design.Behaviors</x:String>
+      <x:String>UiPath.CV.Activities.Design</x:String>
+      <x:String>UiPath.CV.Activities.Design.Windows</x:String>
+      <x:String>UiPath.CV.Activities.Design.ViewModels</x:String>
+      <x:String>UiPath.CV.Activities.Design.Services</x:String>
+      <x:String>UiPath.CV.Activities.Design.Recorder</x:String>
+      <x:String>UiPath.CV.Activities.Design.Properties</x:String>
+      <x:String>UiPath.CV.Activities.Design.Models</x:String>
+      <x:String>UiPath.CV.Activities.Design.Extensions</x:String>
+      <x:String>UiPath.CV.Activities.Design.Editors</x:String>
+      <x:String>UiPath.CV.Activities.Design.Controls</x:String>
+      <x:String>UiPath.CV.Activities.Design.Behaviors</x:String>
+      <x:String>UiPath.Activities.Presentation</x:String>
+      <x:String>UiPath.Activities.Presentation.Converters</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary.ViewModels.DragDrop</x:String>
+      <x:String>UiPath.Shared.Activities.Design</x:String>
+      <x:String>UiPath.Shared.Activities.Design.ViewModels.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Utils</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Services</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Services.Interfaces</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Factories</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Extensions</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Editors</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Converters</x:String>
+      <x:String>UiPath.Shared.Activities.Design.AttachedProperties</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Controls</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Controls.PropertyEditors</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Controls.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Business</x:String>
+      <x:String>UiPath.Shared.Activities.Design.Behaviors</x:String>
+      <x:String>UiPath.Shared.Recorder.Design.Actipro</x:String>
+      <x:String>UiPath.Shared.Recorder.Localization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Exceptions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Windows</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.ViewModels</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.ViewModels.Activities.DataSources</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.ViewModels.SyntaxEditor</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.ViewModels.SyntaxEditor.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Themes.Apollo.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Themes.Apollo.Controls</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Recorder.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Recorder.Controls</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.PropertyEditors</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Extensions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Converters</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Controls</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Client</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Client.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Client.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.ActivityFactory</x:String>
+      <x:String>UiPath.Studio.Workflow.Wizards.ViewModels</x:String>
+      <x:String>UiPath.Studio.Plugin.Workflow.Wizards</x:String>
+      <x:String>UiPath.Workflow</x:String>
+      <x:String>UiPath.Workflow.Wizards</x:String>
+      <x:String>UiPath.Workflow.Wizards.Views</x:String>
+      <x:String>UiPath.Workflow.Wizards.ViewModels</x:String>
+      <x:String>UiPath.Workflow.Wizards.Properties</x:String>
+      <x:String>UiPath.Workflow.Wizards.LocalizationResources</x:String>
+      <x:String>UiPath.Workflow.Wizards.ExportedWizards</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -106,9 +180,15 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Wizards</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1174,6743" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1174,8792" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="BackupPath" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="ListOfFlowNames" />
@@ -116,6 +196,8 @@
       <Variable x:TypeArguments="si:DirectoryInfo" Name="FolderInfo" />
       <Variable x:TypeArguments="x:Boolean" Name="PADOpen" />
       <Variable x:TypeArguments="x:String" Name="Choice" />
+      <Variable x:TypeArguments="x:String" Name="PADType" />
+      <Variable x:TypeArguments="x:String" Name="PADWindowSelector" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -123,6 +205,30 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1112,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_ExportFlows: START&quot;]" />
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1112,324" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Please select which PAD type is installed on your PC and will be used for Flow export" OptionsString="Microsoft Store (MSIX);Power Automate MSI installer (MSI)" Title="Choose PAD type">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[PADType]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:LogMessage sap:VirtualizedContainerService.HintSize="1112,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;PAD Type: &quot;+PADType]" />
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[PADType]" sap:VirtualizedContainerService.HintSize="1112,194" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Assign x:Key="Microsoft Store (MSIX)" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_11">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[PADWindowSelector]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">cls='HwndWrapper*'</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign x:Key="Power Automate MSI installer (MSI)" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[PADWindowSelector]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["cls='HwndWrapper*'"]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Switch>
     <ui:SelectFolder DisplayName="Browse For Backup Folder" sap:VirtualizedContainerService.HintSize="1112,111" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[BackupPath]" />
     <ui:GetFolderInfoX DisplayName="Get Folder Info" FolderPath="[BackupPath]" sap:VirtualizedContainerService.HintSize="1112,165" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_2" Output="[FolderInfo]" ThrowIfNotExists="False" />
     <If Condition="[FolderInfo.GetFiles.Count&gt;0 or FolderInfo.GetDirectories.Count&gt;0]" DisplayName="If Backup Folder contains files or folders, warn user" sap:VirtualizedContainerService.HintSize="1112,1610" sap2010:WorkflowViewState.IdRef="If_3">
@@ -230,7 +336,7 @@
               </Sequence>
             </uix:NCheckState.IfNotExists>
             <uix:NCheckState.Target>
-              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1280, 1392" DesignTimeScaleFactor="1" Guid="3c883cce-48c0-4b68-8ed9-354acd21429d" ImageBase64="" InformativeScreenshot="5bf65cfc6978a5ea19e830ddda0d4f32.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' appid='Microsoft.PowerAutomateDesktop*PAD.CONSOLE' title='Power Automate' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible">
+              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1280, 1392" DesignTimeScaleFactor="1" Guid="3c883cce-48c0-4b68-8ed9-354acd21429d" ImageBase64="" InformativeScreenshot="5bf65cfc6978a5ea19e830ddda0d4f32.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                 <uix:TargetAnchorable.FuzzySelectorArgument>
                   <InArgument x:TypeArguments="x:String">
                     <Literal x:TypeArguments="x:String" Value="" />
@@ -242,38 +348,38 @@
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
     </ui:InterruptibleDoWhile>
-    <If Condition="[PADOpen]" DisplayName="If PAD is open" sap:VirtualizedContainerService.HintSize="1112,2791" sap2010:WorkflowViewState.IdRef="If_7">
+    <If Condition="[PADOpen]" DisplayName="If PAD is open" sap:VirtualizedContainerService.HintSize="1112,4149" sap2010:WorkflowViewState.IdRef="If_7">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="706,2518" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="688,3727" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="644,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="626,1253" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="556,1062" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="556,1054" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'My flows'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,738" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Timeout="15" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'My flows'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,732" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Timeout="15" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,487" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,483" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,177" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;My flows appeared, PAD launched correctly&quot;]" />
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="388,220" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;My flows appeared, PAD launched correctly&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                           <uix:NClick.Target>
-                            <uix:TargetAnchorable CVScreenId="75512038-d042-43b1-9030-07b5cca22ff0" CvTextArea="107, 129, 57, 16" CvTextArgument="My flows" CvType="Text" DesignTimeRectangle="108, 126, 55, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' automationid='' check:text='My flows' /&gt;" Guid="4ea7b534-1a86-4d07-9e0a-ebc41d1b5922" InformativeScreenshot="14e7d67154ef99d087485907037b3470.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' appid='Microsoft.PowerAutomateDesktop*' title='Power Automate' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                            <uix:TargetAnchorable CVScreenId="75512038-d042-43b1-9030-07b5cca22ff0" CvTextArea="107, 129, 57, 16" CvType="Text" DesignTimeRectangle="108, 126, 55, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' /&gt;" Guid="4ea7b534-1a86-4d07-9e0a-ebc41d1b5922" InformativeScreenshot="14e7d67154ef99d087485907037b3470.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                           </uix:NClick.Target>
                           <uix:NClick.VerifyOptions>
                             <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -298,34 +404,34 @@
                       </Sequence>
                     </uix:NCheckState.IfNotExists>
                     <uix:NCheckState.Target>
-                      <uix:TargetAnchorable CVScreenId="3d377dd5-cd06-4258-b920-11c576dba4e3" CvTextArea="107, 129, 57, 16" CvTextArgument="My flows" CvType="Text" DesignTimeRectangle="108, 126, 55, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' automationid='' check:text='My flows' /&gt;" Guid="264b1960-a76b-4fc7-89d8-8c8fba2a07f4" InformativeScreenshot="79b1fa7f5cd4603b48c57c7cab8f895b.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' appid='Microsoft.PowerAutomateDesktop*' title='Power Automate' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" />
+                      <uix:TargetAnchorable CVScreenId="3d377dd5-cd06-4258-b920-11c576dba4e3" CvTextArea="107, 129, 57, 16" CvTextArgument="My flows" CvType="Text" DesignTimeRectangle="108, 126, 55, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' automationid='' check:text='My flows' /&gt;" Guid="264b1960-a76b-4fc7-89d8-8c8fba2a07f4" InformativeScreenshot="79b1fa7f5cd4603b48c57c7cab8f895b.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                     </uix:NCheckState.Target>
                   </uix:NCheckState>
-                  <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get Attribute 'items' of Flow List" sap:VirtualizedContainerService.HintSize="494,234" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                  <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get Attribute 'items' of Flow List" sap:VirtualizedContainerService.HintSize="494,232" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                     <uix:NGetAttributeGeneric.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="99, 184, 1174, 1157" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' role='list' /&gt;" Guid="e16b44f3-01d4-4777-8df9-8be3fc827ac0" InformativeScreenshot="3d85969a79416cb9dde7a4f6a9980261.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' appid='Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe!PAD.CONSOLE' title='Power Automate' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                      <uix:TargetAnchorable DesignTimeRectangle="99, 184, 1174, 1157" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' role='list' /&gt;" Guid="e16b44f3-01d4-4777-8df9-8be3fc827ac0" InformativeScreenshot="3d85969a79416cb9dde7a4f6a9980261.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
                     </uix:NGetAttributeGeneric.Target>
                   </uix:NGetAttributeGeneric>
                 </Sequence>
               </ActivityAction>
             </uix:NApplicationCard.Body>
             <uix:NApplicationCard.TargetApp>
-              <uix:TargetApp Area="769, 436, 1200, 780" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="2c280677851a5409b1e4ea6fe45145d1.png" Selector="&lt;wnd app='pad.console.host.exe' appid='Microsoft.PowerAutomateDesktop*' title='Power Automate' /&gt;" Title="Power Automate" />
+              <uix:TargetApp Area="769, 436, 1200, 780" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="2c280677851a5409b1e4ea6fe45145d1.png" Selector="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" Title="Power Automate" />
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[RowIndex]" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="644,2373" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListOfFlowNames]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[RowIndex]" DisplayName="For Each item" sap:VirtualizedContainerService.HintSize="626,2386" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListOfFlowNames]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="610,2236" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,2249" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="FlowName" />
                     <Variable x:TypeArguments="sd:DataTable" Name="SubflowNameDT" />
@@ -335,7 +441,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Increment RowIndex by 1 since PAD list does not follow zero-index" sap:VirtualizedContainerService.HintSize="548,114" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <Assign DisplayName="Increment RowIndex by 1 since PAD list does not follow zero-index" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_8">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[RowIndex]</OutArgument>
                     </Assign.To>
@@ -343,7 +449,7 @@
                       <InArgument x:TypeArguments="x:Int32">[RowIndex+1]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="Assign Flow Name from Table" sap:VirtualizedContainerService.HintSize="548,114" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign DisplayName="Assign Flow Name from Table" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_9">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[FlowName]</OutArgument>
                     </Assign.To>
@@ -351,26 +457,28 @@
                       <InArgument x:TypeArguments="x:String">[item]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder named with Flow name" sap:VirtualizedContainerService.HintSize="548,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[BackupPath+&quot;\&quot;+FlowName]" />
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_OpenWorkflow - Invoke Workflow File (PAD_OpenWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="548,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="PAD Actions\PAD_OpenWorkflow.xaml">
+                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder named with Flow name" sap:VirtualizedContainerService.HintSize="530,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[BackupPath+&quot;\&quot;+FlowName]" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_OpenWorkflow - Invoke Workflow File (PAD_OpenWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="PAD Actions\PAD_OpenWorkflow.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:Int32" x:Key="RowIndex">[RowIndex]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_RetrieveSubflowNamesAsTable - Invoke Workflow File (PAD Actions\PAD_RetrieveListOfSubflowNames.xaml)" sap:VirtualizedContainerService.HintSize="548,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="PAD Actions\PAD_RetrieveSubflowNamesAsTable.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_RetrieveSubflowNamesAsTable - Invoke Workflow File (PAD Actions\PAD_RetrieveListOfSubflowNames.xaml)" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="PAD Actions\PAD_RetrieveSubflowNamesAsTable.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                       <OutArgument x:TypeArguments="sd:DataTable" x:Key="SubflowNameDT">[SubflowNameDT]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SubflowNameDT]" DisplayName="For Subflow in Flow" sap:VirtualizedContainerService.HintSize="548,1205" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[SubflowNameDT]" DisplayName="For Subflow in Flow" sap:VirtualizedContainerService.HintSize="530,1218" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="514,1009" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1022" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="SubflowName" />
                             <Variable x:TypeArguments="x:String" Name="ClipboardData" />
@@ -382,7 +490,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="452,114" sap2010:WorkflowViewState.IdRef="Assign_10">
+                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_10">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[SubflowName]</OutArgument>
                             </Assign.To>
@@ -390,27 +498,18 @@
                               <InArgument x:TypeArguments="x:String">[CurrentRow(0).ToString.Trim]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_ExtractSubflowData - Invoke Workflow File (PAD Actions\PAD_ExtractSubflowTabs.xaml)" sap:VirtualizedContainerService.HintSize="452,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="PAD Actions\PAD_ExtractSubflowData.xaml">
+                          <Delay DisplayName="Delay 10 seconds" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                          <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="CreateFile_3" Name="[SubflowName+&quot;.txt&quot;]" Output="[NewFlowDataFile]" Path="[BackupPath+&quot;\&quot;+FlowName]" />
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_ExtractSubflowData - Invoke Workflow File (PAD Actions\PAD_ExtractSubflowTabs.xaml)" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="PAD Actions\PAD_ExtractSubflowData.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="SubflowName">[SubflowName]</InArgument>
                               <OutArgument x:TypeArguments="x:String" x:Key="ClipboardData">[ClipboardData]</OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,282" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                            <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,171" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:Replace DisplayName="Replace SubflowName_copy with Subflow Name" sap:VirtualizedContainerService.HintSize="354,83" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[ClipboardData]" IsBuilderTabModified="False" Pattern="[SubflowName+&quot;_copy&quot;]" RegexOption="IgnoreCase, Compiled" Replacement="[SubflowName]" Result="[ClipboardData]" />
-                              </Sequence>
-                            </ui:CommentOut.Body>
-                          </ui:CommentOut>
-                          <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="452,165" sap2010:WorkflowViewState.IdRef="CreateFile_3" Name="[SubflowName+&quot;.txt&quot;]" Output="[NewFlowDataFile]" Path="[BackupPath+&quot;\&quot;+FlowName]" />
-                          <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[BackupPath+&quot;\&quot;+FlowName+&quot;\&quot;+NewFlowDataFile.FullName]" sap:VirtualizedContainerService.HintSize="452,156" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[ClipboardData]" />
+                          <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[BackupPath+&quot;\&quot;+FlowName+&quot;\&quot;+NewFlowDataFile.FullName]" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[ClipboardData]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_23" Message="[&quot;Created a file &quot;+NewFlowDataFile.FullName]" />
                         </Sequence>
                       </ActivityAction>
                     </ui:ForEachRow.Body>
@@ -421,9 +520,10 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CloseWorkflow - Invoke Workflow File (PAD Actions\PAD_CloseWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="548,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CloseWorkflow.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PAD_CloseWorkflow - Invoke Workflow File (PAD Actions\PAD_CloseWorkflow.xaml)" sap:VirtualizedContainerService.HintSize="530,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="PAD Actions\PAD_CloseWorkflow.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="FlowName">[FlowName]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PADWindowSelector">[PADWindowSelector]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
@@ -439,12 +539,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_29">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_29">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_22" Message="[&quot;PAD did not open, quitting process&quot;]" />
         </Sequence>
       </If.Else>
     </If>

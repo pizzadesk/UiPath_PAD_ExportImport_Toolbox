@@ -12,29 +12,35 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "SubflowDataFile&Sequence_61",
-        "result&Sequence_25",
-        "SubflowDataFile&Sequence_56",
-        "result&Sequence_28",
-        "ListOfFlowNames&Sequence_7",
-        "PADOpen&Sequence_7",
-        "Choice&Sequence_32",
-        "FolderInfo&Sequence_7",
         "BackupPath&Sequence_7",
-        "FlowName&Sequence_7"
+        "FlowName&Sequence_7",
+        "FolderInfo&Sequence_7",
+        "PADOpen&Sequence_7",
+        "ListOfFlowNames&Sequence_7",
+        "PADType&Sequence_7",
+        "Choice&Sequence_32",
+        "result&Sequence_25",
+        "SubflowDataFile&Sequence_61",
+        "result&Sequence_28",
+        "SubflowDataFile&Sequence_56"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "PADWindowSelector"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
     {
       "Path": "PAD Actions/PAD_CreateSubflowFromDataFile.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "SubflowCreated&Sequence_2"
+      ],
       "ArgumentsSectionElementsOrder": [
-        "SubflowDataFile",
         "FlowName",
-        "SubflowName"
+        "SubflowName",
+        "SubflowDataFile",
+        "PADWindowSelector"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -46,6 +52,7 @@
         "SubflowPanelContents&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
+        "PADWindowSelector",
         "FlowName"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -58,6 +65,7 @@
         "idx&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
+        "PADWindowSelector",
         "FlowName"
       ],
       "ConstantsSectionElementsOrder": [],

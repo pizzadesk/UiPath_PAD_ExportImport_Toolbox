@@ -12,6 +12,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "PADWindowSelector&Sequence_1",
+        "PADType&Sequence_1",
         "Choice&Sequence_1",
         "PADOpen&Sequence_1",
         "FolderInfo&Sequence_1",
@@ -31,8 +33,11 @@
     {
       "Path": "PAD Actions/PAD_OpenWorkflow.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "DesignerOpen&Sequence_1"
+      ],
       "ArgumentsSectionElementsOrder": [
+        "PADWindowSelector",
         "FlowName",
         "RowIndex"
       ],
@@ -44,6 +49,7 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
+        "PADWindowSelector",
         "ClipboardData",
         "SubflowName",
         "FlowName"
@@ -55,9 +61,10 @@
       "Path": "PAD Actions/PAD_RetrieveSubflowNamesAsTable.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "SubflowPanelContents&Sequence_2"
+        "SubflowPanelContents&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "PADWindowSelector",
         "SubflowNameDT",
         "FlowName"
       ],
@@ -71,8 +78,17 @@
         "SubflowPanelContents&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
+        "PADWindowSelector",
         "FlowName"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
