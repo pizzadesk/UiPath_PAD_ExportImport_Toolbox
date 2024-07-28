@@ -12,6 +12,10 @@ Welcome to the Windows-based UiPath Activities for PAD flow Export and Import re
 - ![Screenshot 2024-07-22 103908](https://github.com/user-attachments/assets/7db12c4c-2a60-4e7e-9694-fc3e257ffa73)
 
 
+## Video showcase
+
+https://github.com/user-attachments/assets/28f1399a-2f67-4a2f-b83a-05189e7a9526
+
 
 ## Getting Started
 
