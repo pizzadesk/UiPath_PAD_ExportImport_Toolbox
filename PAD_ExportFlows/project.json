@@ -2,7 +2,7 @@
   "name": "PAD_ExportFlows",
   "projectId": "83dd4158-e36f-4f9a-8ee7-df40760d8c43",
   "description": "Export contents of PAD (Power Automate for Desktop) Flows into a folder structure resembling the Flow",
-  "main": "Main.xaml",
+  "main": "PAD_ExportMyFlows.xaml",
   "dependencies": {
     "UiPath.System.Activities": "[24.10.3]",
     "UiPath.Testing.Activities": "[24.10.0]",
@@ -47,8 +47,14 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
+      "filePath": "Main",
       "uniqueId": "7989993e-6b54-4c72-9f40-25d5e9a8e0c8",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "PAD_ExportMyFlows.xaml",
+      "uniqueId": "c098837d-8d29-45d4-8252-3d9a22f2ad1f",
       "input": [],
       "output": []
     }

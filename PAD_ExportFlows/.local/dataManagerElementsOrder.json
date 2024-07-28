@@ -9,27 +9,6 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Main.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "PADWindowSelector&Sequence_1",
-        "Choice&Sequence_1",
-        "PADOpen&Sequence_1",
-        "FolderInfo&Sequence_1",
-        "SubflowNameDT&Sequence_12",
-        "FlowName&Sequence_12",
-        "SubflowName&Sequence_13",
-        "NewFlowDataFile&Sequence_13",
-        "ListOfFlowNames&Sequence_1",
-        "BackupPath&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "CopiedData"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "PAD Actions/PAD_OpenWorkflow.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
@@ -84,6 +63,26 @@
       "Path": "Test.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "BackupPath&Sequence_1",
+        "ListOfFlowNames&Sequence_1",
+        "FolderInfo&Sequence_1",
+        "PADOpen&Sequence_1",
+        "Choice&Sequence_1",
+        "PADWindowSelector&Sequence_1",
+        "CopiedData&Sequence_1",
+        "FlowName&Sequence_12",
+        "SubflowNameDT&Sequence_12",
+        "SubflowName&Sequence_13",
+        "NewFlowDataFile&Sequence_13"
+      ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
