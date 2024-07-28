@@ -2,22 +2,21 @@
   "name": "PAD_ImportFlows",
   "projectId": "f84e49ad-f4b2-450a-a88e-81261762c7cf",
   "description": "Import contents of PAD (Power Automate for Desktop) Flows into PAD by creating flows with a specific name and pasting contents of Flow backup files",
-  "main": "Main.xaml",
+  "main": "PAD_ImportFlows.xaml",
   "dependencies": {
     "UiPath.System.Activities": "[24.10.3]",
-    "UiPath.Testing.Activities": "[24.10.0]",
     "UiPath.UIAutomation.Activities": "[24.10.0]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.1.0",
-  "projectVersion": "1.1.1",
+  "projectVersion": "2.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
-    "isAttended": false,
+    "isAttended": true,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
     "workflowSerialization": "DataContract",
@@ -47,14 +46,16 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "446a20cb-24dc-4dbb-9a15-17ec43a6a21e",
+      "filePath": "PAD_ImportFlows.xaml",
+      "uniqueId": "6b19d56b-d6c1-4282-abc7-161d2567f3ee",
       "input": [],
       "output": []
     }
   ],
   "isTemplate": false,
   "templateProjectData": {},
-  "publishData": {},
+  "publishData": {
+    "iconUrl": ".package/_93adacc6-c479-4b53-888a-b2355e1052c2.jpg"
+  },
   "targetFramework": "Windows"
 }

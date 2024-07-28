@@ -9,9 +9,10 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Main.xaml",
+      "Path": "PAD_ImportFlows.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "PADWindowSelector&Sequence_7",
         "BackupPath&Sequence_7",
         "FlowName&Sequence_7",
         "FolderInfo&Sequence_7",
@@ -23,9 +24,7 @@
         "result&Sequence_28",
         "SubflowDataFile&Sequence_56"
       ],
-      "ArgumentsSectionElementsOrder": [
-        "PADWindowSelector"
-      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
