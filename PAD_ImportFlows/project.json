@@ -28,7 +28,7 @@
     "readyForPiP": false,
     "startsInPiP": false,
     "mustRestoreAllDependencies": true,
-    "pipType": "ChildSession"
+    "pipType": "SecondaryDesktop"
   },
   "designOptions": {
     "projectProfile": "Developement",

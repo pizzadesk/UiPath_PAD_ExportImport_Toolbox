@@ -44,7 +44,7 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "PAD Actions/PAD_CloseWorkflow.xaml",
+      "Path": "PAD Actions/PAD_CloseFlow.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [

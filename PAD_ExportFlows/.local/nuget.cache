@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "6ADkWXTOoZXPPXkPUQCIap0LP7McKiyiiylLNHEBHMZa9qG3iA/zYUD85xNg1GDLQx89w5TzjRbur/GsavgchQ==",
+  "dgSpecHash": "Dgn9Dfq8Rvj6K/K0OJi4snEIfu1iVBw0InPEIrq3VNYqbcqyB96VmKy8B2MLrsFl+TDTi+NH9GHfDa/Vzi+C2A==",
   "success": true,
   "projectFilePath": "E:\\UiPath_PAD_ExportImport_Toolbox\\PAD_ExportFlows\\.local\\",
   "expectedPackageFiles": [
-    "E:\\packages\\NuGet\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "E:\\packages\\NuGet\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
     "E:\\packages\\NuGet\\markdig.signed\\0.31.0\\markdig.signed.0.31.0.nupkg.sha512",
     "E:\\packages\\NuGet\\microsoft.applicationinsights\\2.21.0\\microsoft.applicationinsights.2.21.0.nupkg.sha512",
@@ -240,7 +239,6 @@
     "E:\\packages\\NuGet\\uipath.system.activities.runtime\\24.10.3\\uipath.system.activities.runtime.24.10.3.nupkg.sha512",
     "E:\\packages\\NuGet\\uipath.system.activities.runtime.windows\\24.10.3\\uipath.system.activities.runtime.windows.24.10.3.nupkg.sha512",
     "E:\\packages\\NuGet\\uipath.telemetry.client\\2.1.3\\uipath.telemetry.client.2.1.3.nupkg.sha512",
-    "E:\\packages\\NuGet\\uipath.testing.activities\\24.10.0\\uipath.testing.activities.24.10.0.nupkg.sha512",
     "E:\\packages\\NuGet\\uipath.uiautomation.activities\\24.10.0\\uipath.uiautomation.activities.24.10.0.nupkg.sha512",
     "E:\\packages\\NuGet\\uipath.uiautomation.activities.runtime\\24.10.0\\uipath.uiautomation.activities.runtime.24.10.0.nupkg.sha512",
     "E:\\packages\\NuGet\\uipath.uiautomation.activities.runtime.design\\24.10.0\\uipath.uiautomation.activities.runtime.design.24.10.0.nupkg.sha512",

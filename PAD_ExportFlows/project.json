@@ -5,7 +5,6 @@
   "main": "PAD_ExportMyFlows.xaml",
   "dependencies": {
     "UiPath.System.Activities": "[24.10.3]",
-    "UiPath.Testing.Activities": "[24.10.0]",
     "UiPath.UIAutomation.Activities": "[24.10.0]"
   },
   "webServices": [],
@@ -29,7 +28,7 @@
     "readyForPiP": false,
     "startsInPiP": false,
     "mustRestoreAllDependencies": true,
-    "pipType": "ChildSession"
+    "pipType": "SecondaryDesktop"
   },
   "designOptions": {
     "projectProfile": "Developement",

@@ -9,7 +9,7 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "PAD Actions/PAD_OpenWorkflow.xaml",
+      "Path": "PAD Actions/PAD_OpenFlow.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "DesignerOpen&Sequence_1"
@@ -49,7 +49,7 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "PAD Actions/PAD_CloseWorkflow.xaml",
+      "Path": "PAD Actions/PAD_CloseFlow.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [

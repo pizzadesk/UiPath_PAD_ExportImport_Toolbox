@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>585,1019</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1469,1791</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PAD_CloseWorkflow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -32,8 +32,6 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
@@ -49,6 +47,8 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -59,6 +59,7 @@
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
@@ -102,29 +103,28 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_CloseWorkflow" sap:VirtualizedContainerService.HintSize="512,954" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PAD_CloseFlow" sap:VirtualizedContainerService.HintSize="652,1686" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;PAD_CloseWorkflow: START&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="450,529" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="590,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;PAD_CloseFlow: START&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="590,1261" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,330" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="556,1062" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="354,240" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V3">
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="494,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V3">
               <uix:NKeyboardShortcuts.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                   <uix:VerifyExecutionOptions.Retry>
@@ -136,6 +136,51 @@
                 </uix:VerifyExecutionOptions>
               </uix:NKeyboardShortcuts.VerifyOptions>
             </uix:NKeyboardShortcuts>
+            <uix:NCheckState DisplayName="Check App State 'You have unsaved changes'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,725" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,483" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Unsaved changes dialog appeared, clicking Don't save&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Don't save'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CVScreenId="e4ed6e2c-d01d-4709-8e5b-0991aee3ff6a" CvElementArea="191, 116, 90, 33" CvTextArea="207, 126, 58, 12" CvTextArgument="Don't save" CvType="Button" DesignTimeRectangle="192, 116, 88, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='Button' name='Don&amp;apos;t save' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='Button' name='Don&amp;apos;t save' role='push button' check:text='Don&amp;apos;t save' /&gt;" Guid="01e9c784-06d9-42ea-9d6b-ae2080f4eeda" InformativeScreenshot="b02e5cfc520431068f0a4a95643f6abb.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='You have unsaved changes' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="0, 0, 400, 164" DesignTimeScaleFactor="1" Guid="b314290f-a8dc-4d3c-9ad9-5a76bee05128" InformativeScreenshot="9b881be2360066946e7604dc3fec7f40.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='You have unsaved changes' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -143,6 +188,6 @@
         <uix:TargetApp Area="240, 178, 1200, 800" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="74df229ae2270f8790660d594a48f5b7.png" Selector="[string.Format(&quot;&lt;wnd app='pad.designer.exe' {0} title='Power Automate | *{1}*' /&gt;&quot;, PADWindowSelector,FlowName)]" Title="Power Automate | Latest Latvian News Headlines" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_CloseWorkflow: END&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="590,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_CloseFlow: END&quot;]" />
   </Sequence>
 </Activity>
