@@ -1,0 +1,731 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="PAD_ExportArguments" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FlowName" Type="InArgument(x:String)" />
+    <x:Property Name="BackupPath" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>2577,6224</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="PAD_ImportArguments" sap:VirtualizedContainerService.HintSize="2587,6159" sap2010:WorkflowViewState.IdRef="Sequence_27">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="ArgumentPropertyDT" />
+      <Variable x:TypeArguments="x:String" Name="ArgumentType" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2525,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;PAD_ImportArguments: START&quot;]" />
+    <ui:ForEachFileX DisplayName="For Each Arguments file in Backup folder" Filter="*.txt" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="2525,5734" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="ArgumentPropertyFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2491,5444" sap2010:WorkflowViewState.IdRef="Sequence_53">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="ArgumentData" />
+              <Variable x:TypeArguments="x:Boolean" Name="DialogOpen" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[ArgumentPropertyFile.FullName.contains(&quot;Input&quot;)]" DisplayName="If Argument comes from Input folder" sap:VirtualizedContainerService.HintSize="2429,556" sap2010:WorkflowViewState.IdRef="If_23">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_193">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign Argument Type Input" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_21">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[ArgumentType]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Input</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_194">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign Argument Type Output" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_22">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[ArgumentType]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Output</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:ReadTextFile File="{x:Null}" Content="[ArgumentData]" DisplayName="Read Argument data file" FileName="[ArgumentPropertyFile.FullName]" sap:VirtualizedContainerService.HintSize="2429,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+            <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[ArgumentPropertyDT]" DisplayName="Generate Argument correspondence table" sap:VirtualizedContainerService.HintSize="2429,233" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ArgumentData]" UseColumnHeader="True" />
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2429,4455" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="2395,4265" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+                    <ui:RetryScope.ActivityBody>
+                      <ActivityAction>
+                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="2353,3894" sap2010:WorkflowViewState.IdRef="Sequence_214">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="2291,119" sap2010:WorkflowViewState.IdRef="Activate_3">
+                            <ui:Activate.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="843c3e62-8570-4341-ab3e-f0b6e4714146">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Activate.Target>
+                          </ui:Activate>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click New Argument" sap:VirtualizedContainerService.HintSize="2291,225" sap2010:WorkflowViewState.IdRef="NClick_67" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CVScreenId="a5d59aa7-67c6-45c2-b606-5b5e81b0bbdf" CvElementArea="1141, 151, 20, 20" CvTextArea="1145, 155, 10, 10" CvTextArgument="+" CvType="Button" DesignTimeRectangle="1032, 235, 42, 42" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' name='Input / output variables' /&gt;&lt;uia automationid='VariablesPanelInputOutput*AddArgumentButton' cls='DropDownButton' name='Add variable' /&gt;" FuzzySelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' name='Input / output variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariablesAddArgumentButton' cls='DropDownButton' name='Add variable' role='button' check:fulltext='' /&gt;" Guid="1ae299d1-b8ae-40a9-81df-bd3bfa1673bc" ImageBase64="" InformativeScreenshot="da1e9a1014b9f33170b9032a5d2aeb3a.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' title='Power Automate | {0}' /&gt;&quot;, FlowName)]" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Argument Type" sap:VirtualizedContainerService.HintSize="2291,225" sap2010:WorkflowViewState.IdRef="NClick_68" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="38, 14, 119, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;uia cls='TextBlock' name='{0}' /&gt;&quot;, ArgumentType)]" FuzzySelectorArgument="&lt;uia cls='TextBlock' name='Input' role='text' automationid='' check:fulltext='Input' /&gt;" Guid="ae3d47fd-1689-4a0c-9475-91f7ae8ac4fa" InformativeScreenshot="f1818d6eac2b00f45ccdd94088dc48a0.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' title='Power Automate | {0}' cls='HwndWrapper*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <uix:NCheckState DisplayName="Check App State 'New variable'" Exists="[DialogOpen]" sap:VirtualizedContainerService.HintSize="2291,3237" sap2010:WorkflowViewState.IdRef="NCheckState_51" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1787,2997" sap2010:WorkflowViewState.IdRef="Sequence_212">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Int32" Name="RowIndex" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1725,175" sap2010:WorkflowViewState.IdRef="LogMessage_33" Message="[&quot;New variable dialog open, adding variable: &quot;+ArgumentPropertyFile.ToString]" />
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[RowIndex]" DataTable="[ArgumentPropertyDT]" DisplayName="For Each Row with Argument data in Data Table" sap:VirtualizedContainerService.HintSize="1725,2514" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Add Argument to Flow" sap:VirtualizedContainerService.HintSize="1691,2318" sap2010:WorkflowViewState.IdRef="Sequence_198">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="AssociatedSelector" />
+                                          <Variable x:TypeArguments="x:String" Name="PropertyValue" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="1629,119" sap2010:WorkflowViewState.IdRef="Activate_4">
+                                          <ui:Activate.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9e92eb08-cc7e-4513-b884-64d8f816b262">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:Activate.Target>
+                                        </ui:Activate>
+                                        <Assign sap:VirtualizedContainerService.HintSize="1629,114" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[AssociatedSelector]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[CurrentRow(2).ToString]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <Assign sap:VirtualizedContainerService.HintSize="1629,114" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[PropertyValue]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[CurrentRow(1).ToString]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <uix:NCheckState DisplayName="Check App State Associated Selector" sap:VirtualizedContainerService.HintSize="1629,1883" sap2010:WorkflowViewState.IdRef="NCheckState_50" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                          <uix:NCheckState.IfExists>
+                                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="559,1127" sap2010:WorkflowViewState.IdRef="Sequence_199">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="x:String" Name="SelectorAttribute" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[AssociatedSelector.contains(&quot;Toggle&quot;)]" DisplayName="If attribute is Toggle" sap:VirtualizedContainerService.HintSize="497,806" sap2010:WorkflowViewState.IdRef="If_24">
+                                                <If.Then>
+                                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,318" sap2010:WorkflowViewState.IdRef="Sequence_201">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="role" DisplayName="Get Attribute of Input Field" sap:VirtualizedContainerService.HintSize="354,230" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_28" Result="[SelectorAttribute]" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                      <uix:NGetAttributeGeneric.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="152, 215, 412, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' /&gt;&lt;ctrl automationid='PART_DraggingThumb' /&gt;&quot;, AssociatedSelector)]" FuzzySelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}'/&gt;&quot;, AssociatedSelector)]" Guid="cf9eeb30-be76-4992-9afa-15ed7b78f981" ImageBase64="" InformativeScreenshot="e11c3611ccceced75dbf6a6ccb7b0db4.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New*variable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NGetAttributeGeneric.Target>
+                                                    </uix:NGetAttributeGeneric>
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,318" sap2010:WorkflowViewState.IdRef="Sequence_202">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="role" DisplayName="Get Attribute of Input Field" sap:VirtualizedContainerService.HintSize="354,230" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_29" Result="[SelectorAttribute]" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                      <uix:NGetAttributeGeneric.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="152, 215, 412, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' /&gt;&quot;, AssociatedSelector)]" FuzzySelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}'/&gt;&quot;, AssociatedSelector)]" Guid="cf9eeb30-be76-4992-9afa-15ed7b78f981" ImageBase64="" InformativeScreenshot="e11c3611ccceced75dbf6a6ccb7b0db4.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New*variable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NGetAttributeGeneric.Target>
+                                                    </uix:NGetAttributeGeneric>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[SelectorAttribute]" sap:VirtualizedContainerService.HintSize="497,231" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                                                <Switch.Default>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="416,533" sap2010:WorkflowViewState.IdRef="Sequence_208">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Data type'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_71" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                      <uix:NClick.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="152, 173, 412, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' /&gt;&quot;, AssociatedSelector)]" FuzzySelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='VariableDefaultDataTypeTextBox' role='push button' check:text='Data type:' /&gt;" Guid="44130730-142f-4bf2-a1c7-bb2134cd1b9b" ImageBase64="" InformativeScreenshot="fc06563a2a5a182fb7b2f318a30d15bc.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New {0} variable' /&gt;&quot;, ArgumentType.ToLower)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NClick.Target>
+                                                      <uix:NClick.VerifyOptions>
+                                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                          <uix:VerifyExecutionOptions.Retry>
+                                                            <InArgument x:TypeArguments="x:Boolean" />
+                                                          </uix:VerifyExecutionOptions.Retry>
+                                                          <uix:VerifyExecutionOptions.Timeout>
+                                                            <InArgument x:TypeArguments="x:Double" />
+                                                          </uix:VerifyExecutionOptions.Timeout>
+                                                        </uix:VerifyExecutionOptions>
+                                                      </uix:NClick.VerifyOptions>
+                                                    </uix:NClick>
+                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Corresponding Data Type" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_72" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                      <uix:NClick.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="6, 78, 408, 36" DesignTimeScaleFactor="1" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='{0}' role='menu item' /&gt;&quot;, PropertyValue)]" FuzzySelectorArgument="&lt;ctrl name='Boolean' role='menu item' automationid='' check:text='Boolean' /&gt;" Guid="0b6ffdcb-5ff3-4c02-99bc-c4c1a53b3cb7" ImageBase64="" InformativeScreenshot="23c04cb5f7b853860784bb20ee421ccd.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New {0} variable' /&gt;&quot;, ArgumentType.ToLower)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NClick.Target>
+                                                      <uix:NClick.VerifyOptions>
+                                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                          <uix:VerifyExecutionOptions.Retry>
+                                                            <InArgument x:TypeArguments="x:Boolean" />
+                                                          </uix:VerifyExecutionOptions.Retry>
+                                                          <uix:VerifyExecutionOptions.Timeout>
+                                                            <InArgument x:TypeArguments="x:Double" />
+                                                          </uix:VerifyExecutionOptions.Timeout>
+                                                        </uix:VerifyExecutionOptions>
+                                                      </uix:NClick.VerifyOptions>
+                                                    </uix:NClick>
+                                                  </Sequence>
+                                                </Switch.Default>
+                                                <Sequence x:Key="combo box" sap:VirtualizedContainerService.HintSize="416,523" sap2010:WorkflowViewState.IdRef="Sequence_205">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Data type'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_69" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable DesignTimeRectangle="152, 173, 412, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' /&gt;&quot;, AssociatedSelector)]" FuzzySelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='VariableDefaultDataTypeTextBox' role='push button' check:text='Data type:' /&gt;" Guid="44130730-142f-4bf2-a1c7-bb2134cd1b9b" ImageBase64="" InformativeScreenshot="fc06563a2a5a182fb7b2f318a30d15bc.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New*variable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                    </uix:NClick.Target>
+                                                    <uix:NClick.VerifyOptions>
+                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                        <uix:VerifyExecutionOptions.Retry>
+                                                          <InArgument x:TypeArguments="x:Boolean" />
+                                                        </uix:VerifyExecutionOptions.Retry>
+                                                        <uix:VerifyExecutionOptions.Timeout>
+                                                          <InArgument x:TypeArguments="x:Double" />
+                                                        </uix:VerifyExecutionOptions.Timeout>
+                                                      </uix:VerifyExecutionOptions>
+                                                    </uix:NClick.VerifyOptions>
+                                                  </uix:NClick>
+                                                  <If Condition="[PropertyValue.Contains(&quot;1&quot;)]" DisplayName="If Property Value contains 1, True" sap:VirtualizedContainerService.HintSize="354,207" sap2010:WorkflowViewState.IdRef="If_25">
+                                                    <If.Then>
+                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,328" sap2010:WorkflowViewState.IdRef="Sequence_203">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.5" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="354,240" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)]t[u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3">
+                                                          <uix:NKeyboardShortcuts.VerifyOptions>
+                                                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                              <uix:VerifyExecutionOptions.Retry>
+                                                                <InArgument x:TypeArguments="x:Boolean" />
+                                                              </uix:VerifyExecutionOptions.Retry>
+                                                              <uix:VerifyExecutionOptions.Timeout>
+                                                                <InArgument x:TypeArguments="x:Double" />
+                                                              </uix:VerifyExecutionOptions.Timeout>
+                                                            </uix:VerifyExecutionOptions>
+                                                          </uix:NKeyboardShortcuts.VerifyOptions>
+                                                        </uix:NKeyboardShortcuts>
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,328" sap2010:WorkflowViewState.IdRef="Sequence_204">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.5" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="354,240" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)]f[u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3">
+                                                          <uix:NKeyboardShortcuts.VerifyOptions>
+                                                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                              <uix:VerifyExecutionOptions.Retry>
+                                                                <InArgument x:TypeArguments="x:Boolean" />
+                                                              </uix:VerifyExecutionOptions.Retry>
+                                                              <uix:VerifyExecutionOptions.Timeout>
+                                                                <InArgument x:TypeArguments="x:Double" />
+                                                              </uix:VerifyExecutionOptions.Timeout>
+                                                            </uix:VerifyExecutionOptions>
+                                                          </uix:NKeyboardShortcuts.VerifyOptions>
+                                                        </uix:NKeyboardShortcuts>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                                <uix:NSetText x:Key="editable text" DisplayName="Set Text External Name" sap:VirtualizedContainerService.HintSize="334,162" sap2010:WorkflowViewState.IdRef="NSetText_10" Text="[PropertyValue]" Version="V3">
+                                                  <uix:NSetText.Target>
+                                                    <uix:TargetAnchorable DesignTimeRectangle="152, 131, 412, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' /&gt;&quot;, AssociatedSelector)]" FuzzySelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='VariableNameTextBox' role='editable text' /&gt;" Guid="c62afbb1-fc97-40b6-84bb-59f3f7e9f32f" ImageBase64="" InformativeScreenshot="d214f7a64e39ee2f36815d09d43a7e22.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New {0} variable' /&gt;&quot;, ArgumentType.ToLower)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                  </uix:NSetText.Target>
+                                                </uix:NSetText>
+                                                <Sequence x:Key="indicator" sap:VirtualizedContainerService.HintSize="416,537" sap2010:WorkflowViewState.IdRef="Sequence_200">
+                                                  <Sequence.Variables>
+                                                    <Variable x:TypeArguments="x:Boolean" Name="SwitchState" />
+                                                  </Sequence.Variables>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NGetAttributeGeneric x:TypeArguments="x:Boolean" Attribute="checked" DisplayName="Get Attribute 'Switch Mark as sensitive'" sap:VirtualizedContainerService.HintSize="354,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_30" Result="[SwitchState]" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                    <uix:NGetAttributeGeneric.Target>
+                                                      <uix:TargetAnchorable DesignTimeRectangle="152, 373, 56, 32" DesignTimeScaleFactor="1" FullSelectorArgument="[string.Format(&quot;&lt;uia automationid='{0}' cls='Button' /&gt;&quot;, AssociatedSelector)]" FuzzySelectorArgument="&lt;uia automationid='VariableSensitivityToggleButton' cls='Button' role='Switch' /&gt;" Guid="587ac111-a317-4dc8-b931-7f7cbeb6bac0" ImageBase64="" InformativeScreenshot="d022d9827440d36557c2983e8f274c2b.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New {0} variable' /&gt;&quot;, ArgumentType.ToLower)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                    </uix:NGetAttributeGeneric.Target>
+                                                  </uix:NGetAttributeGeneric>
+                                                  <If Condition="[SwitchState=CBool(PropertyValue.TrimStart.TrimEnd)]" sap:VirtualizedContainerService.HintSize="354,207" sap2010:WorkflowViewState.IdRef="If_26">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <If.Then>
+                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,256" sap2010:WorkflowViewState.IdRef="Sequence_206">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,168" sap2010:WorkflowViewState.IdRef="LogMessage_36" Message="[&quot;Switch state matches property value&quot;]" />
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,481" sap2010:WorkflowViewState.IdRef="Sequence_207">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,177" sap2010:WorkflowViewState.IdRef="LogMessage_37" Message="[&quot;Switch has different property value. Clicking switch to equalize.&quot;]" />
+                                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Switch" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_70" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                          <uix:NClick.Target>
+                                                            <uix:TargetAnchorable DesignTimeRectangle="152, 215, 412, 26" DesignTimeScaleFactor="1" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' /&gt;&quot;, AssociatedSelector)]" FuzzySelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' role='push button' check:text='Mark as sensitive' /&gt;&quot;, AssociatedSelector)]" Guid="8eddc4fb-be0a-4ddb-a6a1-17b3eb4bc2d3" ImageBase64="" InformativeScreenshot="77f2255d46a19cb698e4dc5fa5287d70.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New {0} variable' /&gt;&quot;, ArgumentType.ToLower)]" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
+                                                          </uix:NClick.Target>
+                                                          <uix:NClick.VerifyOptions>
+                                                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                              <uix:VerifyExecutionOptions.Retry>
+                                                                <InArgument x:TypeArguments="x:Boolean" />
+                                                              </uix:VerifyExecutionOptions.Retry>
+                                                              <uix:VerifyExecutionOptions.Timeout>
+                                                                <InArgument x:TypeArguments="x:Double" />
+                                                              </uix:VerifyExecutionOptions.Timeout>
+                                                            </uix:VerifyExecutionOptions>
+                                                          </uix:NClick.VerifyOptions>
+                                                        </uix:NClick>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                                <uix:NTypeInto x:Key="spin box" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Input'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,254" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Text="[PropertyValue]" Version="V3">
+                                                  <uix:NTypeInto.Target>
+                                                    <uix:TargetAnchorable CVScreenId="eb510b97-3025-44d4-8d3e-019f7ebca175" CvElementArea="150, 214, 416, 28" CvType="InputBox" DesignTimeRectangle="153, 216, 390, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='VariableDefaultValueTextBox' /&gt;&lt;ctrl automationid='PART_TextBox' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='VariableDefaultValueTextBox' /&gt;&lt;ctrl automationid='PART_TextBox' role='editable text' /&gt;" Guid="44ba3aec-1e39-49cd-acb6-b5a244116422" InformativeScreenshot="a7de1dc1e2ec8d7cbc19bf0b56fa2dbe.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New {0} variable' /&gt;&quot;, ArgumentType.ToLower)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                  </uix:NTypeInto.Target>
+                                                  <uix:NTypeInto.VerifyOptions>
+                                                    <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                                      <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                                        <InArgument x:TypeArguments="x:Boolean" />
+                                                      </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                                      <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                                        <InArgument x:TypeArguments="x:Double" />
+                                                      </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                                    </uix:VerifyExecutionTypeIntoOptions>
+                                                  </uix:NTypeInto.VerifyOptions>
+                                                </uix:NTypeInto>
+                                              </Switch>
+                                            </Sequence>
+                                          </uix:NCheckState.IfExists>
+                                          <uix:NCheckState.IfNotExists>
+                                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,1643" sap2010:WorkflowViewState.IdRef="Sequence_211">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <uix:NCheckState DisplayName="Check App State 'Edit'" sap:VirtualizedContainerService.HintSize="954,1553" sap2010:WorkflowViewState.IdRef="NCheckState_49" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                <uix:NCheckState.IfExists>
+                                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1311" sap2010:WorkflowViewState.IdRef="Sequence_209">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_73" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                      <uix:NClick.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="500, 215, 64, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='OpenVisualizerButton' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='OpenVisualizerButton' role='push button' check:text='Edit' /&gt;" Guid="201d6dbe-b2a7-4262-8448-b9cfd9ecd9bf" ImageBase64="" InformativeScreenshot="86ba205d20b9878b8c49ac1f7dfebdec.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New*variable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NClick.Target>
+                                                      <uix:NClick.VerifyOptions>
+                                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                          <uix:VerifyExecutionOptions.Retry>
+                                                            <InArgument x:TypeArguments="x:Boolean" />
+                                                          </uix:VerifyExecutionOptions.Retry>
+                                                          <uix:VerifyExecutionOptions.Timeout>
+                                                            <InArgument x:TypeArguments="x:Double" />
+                                                          </uix:VerifyExecutionOptions.Timeout>
+                                                        </uix:VerifyExecutionOptions>
+                                                      </uix:NClick.VerifyOptions>
+                                                    </uix:NClick>
+                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'thumb PART_DraggingThumb'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_74" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                      <uix:NClick.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="770, 48, 56, 32" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;uia automationid='PART_ToggleSwitchButton' cls='Button' name='JSON editor' /&gt;&lt;uia automationid='PART_DraggingThumb' cls='Thumb' /&gt;" FuzzySelectorArgument="&lt;uia automationid='PART_ToggleSwitchButton' cls='Button' name='JSON editor' /&gt;&lt;uia automationid='PART_DraggingThumb' cls='Thumb' role='thumb' /&gt;" Guid="71c8bf17-d4b4-4e41-982e-89a5f03caafa" ImageBase64="" InformativeScreenshot="eaacf6c6913b170225b1a300d7f75ac4.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' title='Edit*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NClick.Target>
+                                                      <uix:NClick.VerifyOptions>
+                                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                          <uix:VerifyExecutionOptions.Retry>
+                                                            <InArgument x:TypeArguments="x:Boolean" />
+                                                          </uix:VerifyExecutionOptions.Retry>
+                                                          <uix:VerifyExecutionOptions.Timeout>
+                                                            <InArgument x:TypeArguments="x:Double" />
+                                                          </uix:VerifyExecutionOptions.Timeout>
+                                                        </uix:VerifyExecutionOptions>
+                                                      </uix:NClick.VerifyOptions>
+                                                    </uix:NClick>
+                                                    <uix:NSetText DisplayName="Set Text '[ {'" sap:VirtualizedContainerService.HintSize="388,194" sap2010:WorkflowViewState.IdRef="NSetText_11" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                      <uix:NSetText.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="24, 92, 802, 263" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl automationid='ViewerTextBox' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ViewerTextBox' role='editable text' /&gt;" Guid="11fc7762-8533-47f3-8b17-111d9a6859e8" InformativeScreenshot="98eea8141dd1e04fd55f242af271a502.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' title='Edit*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NSetText.Target>
+                                                      <uix:NSetText.Text>
+                                                        <InArgument x:TypeArguments="x:String">
+                                                          <Literal x:TypeArguments="x:String" Value="" />
+                                                        </InArgument>
+                                                      </uix:NSetText.Text>
+                                                    </uix:NSetText>
+                                                    <ui:SetToClipboard DisplayName="Private: Set To Clipboard" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[String.Join(&quot;&quot;, PropertyValue.Split(New String() {Environment.NewLine, vbCrLf, vbLf}, StringSplitOptions.None)).Replace(&quot; &quot;, &quot;&quot;).Replace(&quot;&quot; &amp; Chr(34), Chr(34))]" />
+                                                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Viewer'" sap:VirtualizedContainerService.HintSize="388,267" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V3">
+                                                      <uix:NKeyboardShortcuts.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="24, 92, 802, 263" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl automationid='ViewerTextBox' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ViewerTextBox' role='editable text' /&gt;" Guid="ee73732c-bf6e-48d2-862e-cce31548dc23" ImageBase64="" InformativeScreenshot="c88d55caabc02565e3c481f14404f402.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' title='Edit*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NKeyboardShortcuts.Target>
+                                                      <uix:NKeyboardShortcuts.VerifyOptions>
+                                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                          <uix:VerifyExecutionOptions.Retry>
+                                                            <InArgument x:TypeArguments="x:Boolean" />
+                                                          </uix:VerifyExecutionOptions.Retry>
+                                                          <uix:VerifyExecutionOptions.Timeout>
+                                                            <InArgument x:TypeArguments="x:Double" />
+                                                          </uix:VerifyExecutionOptions.Timeout>
+                                                        </uix:VerifyExecutionOptions>
+                                                      </uix:NKeyboardShortcuts.VerifyOptions>
+                                                    </uix:NKeyboardShortcuts>
+                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_75" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                                      <uix:NClick.Target>
+                                                        <uix:TargetAnchorable DesignTimeRectangle="646, 388, 88, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='Button' name='Save' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='Button' name='Save' role='push button' check:text='Save' /&gt;" Guid="13353991-7e3b-4621-a1ee-eeb5763a5176" ImageBase64="" InformativeScreenshot="8a784f5129231552ea47896af0e756f7.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='Edit*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                      </uix:NClick.Target>
+                                                      <uix:NClick.VerifyOptions>
+                                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                          <uix:VerifyExecutionOptions.Retry>
+                                                            <InArgument x:TypeArguments="x:Boolean" />
+                                                          </uix:VerifyExecutionOptions.Retry>
+                                                          <uix:VerifyExecutionOptions.Timeout>
+                                                            <InArgument x:TypeArguments="x:Double" />
+                                                          </uix:VerifyExecutionOptions.Timeout>
+                                                        </uix:VerifyExecutionOptions>
+                                                      </uix:NClick.VerifyOptions>
+                                                    </uix:NClick>
+                                                  </Sequence>
+                                                </uix:NCheckState.IfExists>
+                                                <uix:NCheckState.IfNotExists>
+                                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_210">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Error" Message="[&quot;Selector did not appear&quot;]" />
+                                                  </Sequence>
+                                                </uix:NCheckState.IfNotExists>
+                                                <uix:NCheckState.Target>
+                                                  <uix:TargetAnchorable DesignTimeRectangle="500, 215, 64, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='OpenVisualizerButton' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='OpenVisualizerButton' role='push button' check:text='Edit' /&gt;" Guid="5ceee328-a2e0-49d3-aadd-65eec2624dad" ImageBase64="" InformativeScreenshot="7b4da1aa0cbb5250fb4dfb537a33ddb4.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New*variable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                </uix:NCheckState.Target>
+                                              </uix:NCheckState>
+                                            </Sequence>
+                                          </uix:NCheckState.IfNotExists>
+                                          <uix:NCheckState.Target>
+                                            <uix:TargetAnchorable CVScreenId="c46758f7-eada-42f7-9378-e5fea83e8467" CvElementArea="151, 214, 415, 28" CvType="InputBox" DesignTimeRectangle="0, 48, 620, 49" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' /&gt;&quot;, AssociatedSelector)]" FuzzySelectorArgument="[string.Format(&quot;&lt;ctrl name='Variable Properties' role='pane' /&gt;&lt;ctrl automationid='{0}' role='combo box' /&gt;&quot;, AssociatedSelector)]" Guid="2a1e1154-269e-4f89-8371-5cc1e7e10b46" InformativeScreenshot="bfe55f1988624142443b2e2f30f50fc3.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='New*variable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                          </uix:NCheckState.Target>
+                                        </uix:NCheckState>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:ForEachRow>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close window'" sap:VirtualizedContainerService.HintSize="1725,218" sap2010:WorkflowViewState.IdRef="NClick_76" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="417, 488, 88, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='ArgumentVariableCreateButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ArgumentVariableCreateButton' role='push button' check:text='Save' /&gt;" Guid="568a1213-c9d9-43d3-82c5-121d51678ef6" ImageBase64="" InformativeScreenshot="f2fd07955d354397e6ba765ada7c36e7.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' title='New*variable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NClick>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_213">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_34" Message="[&quot;New variable dialog did not open, retrying&quot;]" />
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 620, 536" DesignTimeScaleFactor="1" Guid="10364e8c-9471-4722-a892-ba81a3557b44" InformativeScreenshot="97135b084c98b96ace149681a4a3d06f.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' aaname='New * variable' aastate='focused, sizeable, moveable, focusable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:RetryScope.ActivityBody>
+                    <ui:RetryScope.Condition>
+                      <ActivityFunc x:TypeArguments="x:Boolean">
+                        <ui:CheckTrue DisplayName="Check True" ErrorMessage="[&quot;New variable dialog did not open, could not add variable &quot;+ArgumentPropertyFile.Name]" Expression="[DialogOpen]" sap:VirtualizedContainerService.HintSize="334,131" sap2010:WorkflowViewState.IdRef="CheckTrue_2" />
+                      </ActivityFunc>
+                    </ui:RetryScope.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RetryScope>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="1040, 69, 1280, 1392" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="2c4782f83b988a7c20c63f12f150356e.png" Selector="[string.Format(&quot;&lt;wnd app='pad.designer.exe' title='Power Automate | {0}' cls='HwndWrapper*' /&gt;&quot;, FlowName)]" Title="Power Automate | Test1" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+    </ui:ForEachFileX>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2525,164" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;PAD_ImportArguments: END&quot;]" />
+  </Sequence>
+</Activity>

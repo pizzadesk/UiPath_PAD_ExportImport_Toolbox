@@ -12,17 +12,17 @@
       "Path": "PAD_ImportFlows.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "PADWindowSelector&Sequence_7",
+        "ImportConfiguration&Sequence_7",
+        "SubflowDataFile&Sequence_127",
+        "BackupFolderInfo&Sequence_7",
+        "DirectoryList&Sequence_7",
+        "FoundFlows&Sequence_7",
+        "SubflowDataFile&Sequence_93",
         "BackupPath&Sequence_7",
         "FlowName&Sequence_7",
-        "FolderInfo&Sequence_7",
         "PADOpen&Sequence_7",
-        "ListOfFlowNames&Sequence_7",
-        "Choice&Sequence_32",
-        "result&Sequence_25",
-        "SubflowDataFile&Sequence_61",
-        "result&Sequence_28",
-        "SubflowDataFile&Sequence_56"
+        "PADWindowSelector&Sequence_7",
+        "Choice&Sequence_32"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -57,8 +57,45 @@
     {
       "Path": "PAD Actions/PAD_CreateNewFlow.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "BuildAFlowDialog&Sequence_1"
+      ],
       "ArgumentsSectionElementsOrder": [
+        "PADWindowSelector",
+        "FlowName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PAD Actions/PAD_ImportArguments.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "RowIndex&Sequence_212",
+        "AssociatedSelector&Sequence_198",
+        "PropertyValue&Sequence_198",
+        "SelectorAttribute&Sequence_199",
+        "SwitchState&Sequence_200",
+        "DialogOpen&Sequence_53",
+        "ArgumentPropertyDT&Sequence_27",
+        "ArgumentType&Sequence_27",
+        "ArgumentData&Sequence_53"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "FlowName",
+        "BackupPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PAD Actions/PAD_CheckIfFlowExists.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ListOfFlowNames&Sequence_81"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "FoundFlows",
         "PADWindowSelector",
         "FlowName"
       ],

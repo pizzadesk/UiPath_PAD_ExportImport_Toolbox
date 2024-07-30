@@ -11,7 +11,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.1.0",
-  "projectVersion": "2.0.1",
+  "projectVersion": "3.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -53,7 +53,7 @@
     },
     {
       "filePath": "PAD_ExportMyFlows.xaml",
-      "uniqueId": "c098837d-8d29-45d4-8252-3d9a22f2ad1f",
+      "uniqueId": "a791406f-6217-4267-bbf3-f6157200bfdb",
       "input": [],
       "output": []
     }
