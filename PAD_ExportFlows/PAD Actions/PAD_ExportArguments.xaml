@@ -3,7 +3,7 @@
     <x:Property Name="FlowName" Type="InArgument(x:String)" />
     <x:Property Name="BackupPath" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>2532,11890</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2532,11892</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,7 +113,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_ExportArguments" sap:VirtualizedContainerService.HintSize="2542,11825" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="PAD_ExportArguments" sap:VirtualizedContainerService.HintSize="2542,11827" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="VariablePropertyDT" />
       <Variable x:TypeArguments="x:String" Name="VariableName" />
@@ -124,13 +124,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2480,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;PAD_ExportArguments: START&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2480,11400" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2480,11402" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2446,11201" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2446,11203" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="VariableCount" />
               <Variable x:TypeArguments="x:Int32" Name="ListRow" />
@@ -390,14 +390,14 @@
                                         </uix:VerifyExecutionOptions>
                                       </uix:NClick.VerifyOptions>
                                     </uix:NClick>
-                                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute '[ {'" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_20" Result="[ValueAsJson]" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute Text from input console" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_20" Result="[ValueAsJson]" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
                                       <uix:NGetAttributeGeneric.Target>
-                                        <uix:TargetAnchorable DesignTimeRectangle="24, 92, 802, 263" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl automationid='ValidationFooter' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ValidationFooter' role='client' check:text='[&amp;#xD;&amp;#xA;{&amp;#xD;&amp;#xA;&amp;quot;Column1&amp;quot;:&amp;quot;&amp;quot;,&amp;#xD;&amp;#xA;&amp;quot;Column2&amp;quot;:&amp;quot;&amp;quot;&amp;#xD;&amp;#xA;}&amp;#xD;&amp;#xA;]' /&gt;" Guid="5784aea2-6b28-429c-b9dd-8021cc804ae8" InformativeScreenshot="529eb24c651c9f004ab4b2b46ca4d333.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' appid='Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe!PAD.Console' title='Edit datatable' /&gt;" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
+                                        <uix:TargetAnchorable DesignTimeRectangle="24, 92, 802, 263" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl automationid='ValidationFooter' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ValidationFooter' role='client' check:text='[&amp;#xD;&amp;#xA;{&amp;#xD;&amp;#xA;&amp;quot;Column1&amp;quot;:&amp;quot;&amp;quot;,&amp;#xD;&amp;#xA;&amp;quot;Column2&amp;quot;:&amp;quot;&amp;quot;&amp;#xD;&amp;#xA;}&amp;#xD;&amp;#xA;]' /&gt;" Guid="5784aea2-6b28-429c-b9dd-8021cc804ae8" InformativeScreenshot="529eb24c651c9f004ab4b2b46ca4d333.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='Edit*' /&gt;" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
                                       </uix:NGetAttributeGeneric.Target>
                                     </uix:NGetAttributeGeneric>
-                                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="automationid" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_14" Result="[automationid]" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="automationid" DisplayName="Get Attribute automationid of input console" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_14" Result="[automationid]" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
                                       <uix:NGetAttributeGeneric.Target>
-                                        <uix:TargetAnchorable DesignTimeRectangle="24, 92, 802, 263" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl automationid='ViewerTextBox' /&gt;" Guid="61198e71-3d43-483e-bb4e-4a21687c1266" ImageBase64="" InformativeScreenshot="1a45ab3f9f193d4f3f0e45aa08c3120a.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' title='Power Automate | {0}' cls='HwndWrapper*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" />
+                                        <uix:TargetAnchorable DesignTimeRectangle="24, 92, 802, 263" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl automationid='ViewerTextBox' /&gt;" Guid="61198e71-3d43-483e-bb4e-4a21687c1266" ImageBase64="" InformativeScreenshot="1a45ab3f9f193d4f3f0e45aa08c3120a.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='Edit*' /&gt;" SearchSteps="Selector" />
                                       </uix:NGetAttributeGeneric.Target>
                                     </uix:NGetAttributeGeneric>
                                     <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close window'" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
@@ -419,15 +419,15 @@
                                   </Sequence>
                                 </uix:NCheckState.IfExists>
                                 <uix:NCheckState.IfNotExists>
-                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1582,1389" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1582,1393" sap2010:WorkflowViewState.IdRef="Sequence_44">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NCheckState DisplayName="Check App State 'Boolean dropdown'" sap:VirtualizedContainerService.HintSize="1520,1088" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                    <uix:NCheckState DisplayName="Check App State 'Boolean dropdown'" sap:VirtualizedContainerService.HintSize="1520,1092" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
                                       <uix:NCheckState.IfExists>
-                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,509" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,511" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -446,15 +446,15 @@
                                         </Sequence>
                                       </uix:NCheckState.IfExists>
                                       <uix:NCheckState.IfNotExists>
-                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,839" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1016,843" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <uix:NCheckState DisplayName="Check App State 'Input'" sap:VirtualizedContainerService.HintSize="954,751" sap2010:WorkflowViewState.IdRef="NCheckState_19" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                          <uix:NCheckState DisplayName="Check App State 'Input'" sap:VirtualizedContainerService.HintSize="954,753" sap2010:WorkflowViewState.IdRef="NCheckState_19" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
                                             <uix:NCheckState.IfExists>
-                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,509" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,511" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
