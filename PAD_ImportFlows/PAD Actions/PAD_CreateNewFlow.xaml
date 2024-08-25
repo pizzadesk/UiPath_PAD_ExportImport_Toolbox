@@ -1,15 +1,18 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="PAD_CreateNewFlow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FlowName" Type="InArgument(x:String)" />
-    <x:Property Name="PADWindowSelector" Type="InArgument(x:String)" />
+    <x:Property Name="PADMainMenuWindow" Type="InArgument(ui:UiElement)" />
   </x:Members>
   <this:PAD_CreateNewFlow.FlowName>
     <InArgument x:TypeArguments="x:String" />
   </this:PAD_CreateNewFlow.FlowName>
+  <this:PAD_CreateNewFlow.PADMainMenuWindow>
+    <InArgument x:TypeArguments="ui:UiElement" />
+  </this:PAD_CreateNewFlow.PADMainMenuWindow>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1867,2532</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1471,2698</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PAD_CreateNewFlow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,9 +111,11 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_CreateNewFlow" sap:VirtualizedContainerService.HintSize="1216,2467" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PAD_CreateNewFlow" sap:VirtualizedContainerService.HintSize="1216,2633" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="BuildAFlowDialog" />
     </Sequence.Variables>
@@ -120,22 +125,22 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1154,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;PAD_CreateNewFlow: START&quot;]" />
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1154,2042" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5">
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1154,2208" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1112,1721" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1112,1887" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1050,1633" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1050,1799" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1443" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1445" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -153,9 +158,9 @@
                         </ui:Target>
                       </ui:Activate.Target>
                     </ui:Activate>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'New flow'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                       <uix:NClick.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="88, 32, 90, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='CreateNewFlowButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='CreateNewFlowButton' role='push button' check:text='New flow' /&gt;" Guid="1ecf3272-ffe4-4b0b-8691-5ed35068b7da" ImageBase64="" InformativeScreenshot="66a7735b1bf2e48dd1bfa3c5fe665335.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                        <uix:TargetAnchorable DesignTimeRectangle="88, 32, 90, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='CreateNewFlowButton' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='CreateNewFlowButton' role='push button' check:text='New flow' /&gt;" Guid="1ecf3272-ffe4-4b0b-8691-5ed35068b7da" InformativeScreenshot="6512d464dda28e179737987e847d2103.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' title='Power Automate' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                       </uix:NClick.Target>
                       <uix:NClick.VerifyOptions>
                         <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -168,7 +173,7 @@
                         </uix:VerifyExecutionOptions>
                       </uix:NClick.VerifyOptions>
                     </uix:NClick>
-                    <uix:NCheckState DisplayName="Check App State 'My flows popup'" Exists="[BuildAFlowDialog]" sap:VirtualizedContainerService.HintSize="954,1011" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Build a flow'" Exists="[BuildAFlowDialog]" sap:VirtualizedContainerService.HintSize="954,1011" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                       <uix:NCheckState.IfExists>
                         <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,769" sap2010:WorkflowViewState.IdRef="Sequence_3">
                           <sap:WorkflowViewStateService.ViewState>
@@ -179,7 +184,7 @@
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Build a flow dialog appeared, entering flow name&quot;]" />
                           <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Flow name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Text="[FlowName]" Version="V3">
                             <uix:NTypeInto.Target>
-                              <uix:TargetAnchorable DesignTimeRectangle="605, 87, 271, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl automationid='NewFlowNameTextBox' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='NewFlowNameTextBox' role='editable text' /&gt;" Guid="53b0334a-b02c-4834-97df-706a7f9ac588" ImageBase64="" InformativeScreenshot="5a5d5c9e5f5ce2b874aa768550a48977.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                              <uix:TargetAnchorable DesignTimeRectangle="605, 87, 271, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;ctrl automationid='NewFlowNameTextBox' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='NewFlowNameTextBox' role='editable text' /&gt;" Guid="53b0334a-b02c-4834-97df-706a7f9ac588" ImageBase64="" InformativeScreenshot="0a017c2ca1978c0eed17dae88f98d3b2.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' title='Build a flow' aaname='Build a flow' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                             </uix:NTypeInto.Target>
                             <uix:NTypeInto.VerifyOptions>
                               <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
@@ -194,7 +199,7 @@
                           </uix:NTypeInto>
                           <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Create'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable DesignTimeRectangle="686, 516, 88, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='OKNewFlowButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='OKNewFlowButton' role='push button' check:text='Create' /&gt;" Guid="15cb1cfe-c553-4c3c-a802-2d283abf3330" ImageBase64="" InformativeScreenshot="cd0e42f07839b030610e2e9373d04fbc.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                              <uix:TargetAnchorable DesignTimeRectangle="686, 516, 88, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='OKNewFlowButton' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='OKNewFlowButton' role='push button' check:text='Create' /&gt;" Guid="15cb1cfe-c553-4c3c-a802-2d283abf3330" ImageBase64="" InformativeScreenshot="8ffa1236a4f362e8842ab31a4704b61d.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' aaname='Build a flow' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                             </uix:NClick.Target>
                             <uix:NClick.VerifyOptions>
                               <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -220,14 +225,14 @@
                         </Sequence>
                       </uix:NCheckState.IfNotExists>
                       <uix:NCheckState.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 900, 572" DesignTimeScaleFactor="1" Guid="3834bf70-2f06-4b1a-a5a0-658e6a3843b3" InformativeScreenshot="bf61aa88d7154428308bd2f397c1f47a.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' aaname='Build a flow' aastate='moveable, focusable' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 900, 572" DesignTimeScaleFactor="1" Guid="3834bf70-2f06-4b1a-a5a0-658e6a3843b3" ImageBase64="" InformativeScreenshot="ade12b3343f623858df4efe0d30e50fc.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' aaname='Build a flow' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" />
                       </uix:NCheckState.Target>
                     </uix:NCheckState>
                   </Sequence>
                 </ActivityAction>
               </uix:NApplicationCard.Body>
               <uix:NApplicationCard.TargetApp>
-                <uix:TargetApp Area="769, 436, 1200, 780" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="2c280677851a5409b1e4ea6fe45145d1.png" Selector="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" Title="Power Automate" />
+                <uix:TargetApp Area="769, 436, 1200, 780" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="2c280677851a5409b1e4ea6fe45145d1.png" Selector="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' title='Power Automate' /&gt;" Title="Power Automate" />
               </uix:NApplicationCard.TargetApp>
             </uix:NApplicationCard>
           </Sequence>

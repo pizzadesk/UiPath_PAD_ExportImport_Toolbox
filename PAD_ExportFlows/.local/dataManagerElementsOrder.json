@@ -72,6 +72,8 @@
       "Path": "PAD_ExportMyFlows.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "PADMainMenuWindow&Sequence_1",
+        "SignInRequired&Sequence_1",
         "SubflowFolder&Sequence_42",
         "FlowStatus&Sequence_39",
         "FlowName&Sequence_39",
@@ -83,7 +85,6 @@
         "FolderInfo&Sequence_1",
         "PADOpen&Sequence_1",
         "Choice&Sequence_1",
-        "PADWindowSelector&Sequence_1",
         "CopiedData&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
@@ -99,7 +100,7 @@
         "ChosenButton&Sequence_5"
       ],
       "ArgumentsSectionElementsOrder": [
-        "PADWindowSelector",
+        "PADMainMenuWindow",
         "ListOfFlowNames"
       ],
       "ConstantsSectionElementsOrder": [],

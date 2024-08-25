@@ -1,9 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PAD_ExportArguments" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PAD_ExportArguments" this:PAD_ExportArguments.FlowName="Test" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FlowName" Type="InArgument(x:String)" />
     <x:Property Name="BackupPath" Type="InArgument(x:String)" />
+    <x:Property Name="FlowDesignerWindow" Type="InArgument(ui:UiElement)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>2577,6224</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2577,6114</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,9 +117,11 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_ImportArguments" sap:VirtualizedContainerService.HintSize="2587,6159" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="PAD_ImportArguments" sap:VirtualizedContainerService.HintSize="2587,6049" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ArgumentPropertyDT" />
       <Variable x:TypeArguments="x:String" Name="ArgumentType" />
@@ -129,7 +132,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2525,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;PAD_ImportArguments: START&quot;]" />
-    <ui:ForEachFileX DisplayName="For Each Arguments file in Backup folder" Filter="*.txt" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="2525,5734" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each Arguments file in Backup folder" Filter="*.arg" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="2525,5624" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -138,7 +141,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2491,5444" sap2010:WorkflowViewState.IdRef="Sequence_53">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2491,5334" sap2010:WorkflowViewState.IdRef="Sequence_53">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="ArgumentData" />
               <Variable x:TypeArguments="x:Boolean" Name="DialogOpen" />
@@ -186,13 +189,13 @@
             </If>
             <ui:ReadTextFile File="{x:Null}" Content="[ArgumentData]" DisplayName="Read Argument data file" FileName="[ArgumentPropertyFile.FullName]" sap:VirtualizedContainerService.HintSize="2429,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
             <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[ArgumentPropertyDT]" DisplayName="Generate Argument correspondence table" sap:VirtualizedContainerService.HintSize="2429,233" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ArgumentData]" UseColumnHeader="True" />
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2429,4455" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2429,4345" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[FlowDesignerWindow]" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="2395,4265" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="2395,4185" sap2010:WorkflowViewState.IdRef="RetryScope_2">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="2353,3894" sap2010:WorkflowViewState.IdRef="Sequence_214">
@@ -215,7 +218,7 @@
                           </ui:Activate>
                           <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click New Argument" sap:VirtualizedContainerService.HintSize="2291,225" sap2010:WorkflowViewState.IdRef="NClick_67" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable CVScreenId="a5d59aa7-67c6-45c2-b606-5b5e81b0bbdf" CvElementArea="1141, 151, 20, 20" CvTextArea="1145, 155, 10, 10" CvTextArgument="+" CvType="Button" DesignTimeRectangle="1032, 235, 42, 42" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' name='Input / output variables' /&gt;&lt;uia automationid='VariablesPanelInputOutput*AddArgumentButton' cls='DropDownButton' name='Add variable' /&gt;" FuzzySelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' name='Input / output variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariablesAddArgumentButton' cls='DropDownButton' name='Add variable' role='button' check:fulltext='' /&gt;" Guid="1ae299d1-b8ae-40a9-81df-bd3bfa1673bc" ImageBase64="" InformativeScreenshot="da1e9a1014b9f33170b9032a5d2aeb3a.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' title='Power Automate | {0}' /&gt;&quot;, FlowName)]" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
+                              <uix:TargetAnchorable CVScreenId="a5d59aa7-67c6-45c2-b606-5b5e81b0bbdf" CvElementArea="1141, 151, 20, 20" CvTextArea="1145, 155, 10, 10" CvType="Button" DesignTimeRectangle="1032, 235, 42, 42" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' name='Input / output variables' /&gt;&lt;uia automationid='VariablesPanelInputOutput*AddArgumentButton' cls='DropDownButton' name='Add variable' /&gt;" FuzzySelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' name='Input / output variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariablesAddArgumentButton' cls='DropDownButton' name='Add variable' role='button' check:fulltext='' /&gt;" Guid="1ae299d1-b8ae-40a9-81df-bd3bfa1673bc" ImageBase64="" InformativeScreenshot="da1e9a1014b9f33170b9032a5d2aeb3a.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' title='Power Automate | {0}' /&gt;&quot;, FlowName)]" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
                             </uix:NClick.Target>
                             <uix:NClick.VerifyOptions>
                               <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">

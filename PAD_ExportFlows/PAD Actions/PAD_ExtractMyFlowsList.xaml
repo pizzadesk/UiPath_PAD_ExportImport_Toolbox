@@ -1,9 +1,9 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="PAD_ExtractMyFlowsList" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="PADWindowSelector" Type="InArgument(x:String)" />
     <x:Property Name="ListOfFlowNames" Type="OutArgument(scg:List(x:String))" />
+    <x:Property Name="PADMainMenuWindow" Type="InArgument(ui:UiElement)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1867,3154</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1604,3372</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -135,7 +135,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_ExtractMyFlowsList" sap:VirtualizedContainerService.HintSize="1483,3089" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="PAD_ExtractMyFlowsList" sap:VirtualizedContainerService.HintSize="1483,3307" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ChosenButton" />
       <Variable x:TypeArguments="x:String" Name="Choice" />
@@ -154,13 +154,13 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new List(Of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1421,2550" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1421,2768" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1387,2351" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1387,2599" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="NoFlowsFound" />
             </Sequence.Variables>
@@ -181,17 +181,17 @@
                 </ui:Target>
               </ui:Activate.Target>
             </ui:Activate>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not Choice.Equals(&quot;Stop the automation&quot;) and NoFlowsFound=True]" DisplayName="Do While flows appear in My Flows or user does not choose to stop automation" sap:VirtualizedContainerService.HintSize="1325,2144" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not Choice.Equals(&quot;Stop the automation&quot;) and NoFlowsFound=True]" DisplayName="Do While flows appear in My Flows or user does not choose to stop automation" sap:VirtualizedContainerService.HintSize="1325,2390" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1291,2005" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1291,2251" sap2010:WorkflowViewState.IdRef="Sequence_16">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="1229,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'My flows'" sap:VirtualizedContainerService.HintSize="1229,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable CVScreenId="75512038-d042-43b1-9030-07b5cca22ff0" CvTextArea="107, 129, 57, 16" CvType="Text" DesignTimeRectangle="108, 126, 55, 18" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' /&gt;" Guid="4ea7b534-1a86-4d07-9e0a-ebc41d1b5922" InformativeScreenshot="14e7d67154ef99d087485907037b3470.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      <uix:TargetAnchorable CVScreenId="75512038-d042-43b1-9030-07b5cca22ff0" CvTextArea="107, 129, 57, 16" CvType="Text" DesignTimeRectangle="98, 89, 75, 60" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl name='My flows' role='text' automationid='' check:text='My flows' /&gt;" Guid="4ea7b534-1a86-4d07-9e0a-ebc41d1b5922" ImageBase64="" InformativeScreenshot="644f3cd79b6ca8a34ed58a9712de929d.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' aaname='Power Automate' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                     </uix:NClick.Target>
                     <uix:NClick.VerifyOptions>
                       <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -204,7 +204,7 @@
                       </uix:VerifyExecutionOptions>
                     </uix:NClick.VerifyOptions>
                   </uix:NClick>
-                  <uix:NCheckState DisplayName="Check App State 'You don't have any flows'" Exists="[NoFlowsFound]" sap:VirtualizedContainerService.HintSize="1229,1692" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'You don't have any flows'" Exists="[NoFlowsFound]" sap:VirtualizedContainerService.HintSize="1229,1938" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1259" sap2010:WorkflowViewState.IdRef="Sequence_14">
                         <sap:WorkflowViewStateService.ViewState>
@@ -213,7 +213,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;My flows contains no flows, quitting&quot;]" />
-                        <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="450,324" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;This PAD User does not have any saved flows&quot;+Environment.NewLine+&#xA;&quot;Would you like to sign in to PAD with another user, or stop the automation?&quot;]" OptionsString="Refresh My flows or sign in as another User;Stop the automation" Title="No Flows found">
+                        <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="450,324" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;This PAD User does not have any saved flows&quot;+Environment.NewLine+&#xA;&quot;Would you like to sign in to PAD with another user, or stop the automation?&quot;]" OptionsString="Refresh My flows or Sign In as another User;Stop the automation" Title="No Flows found">
                           <ui:InputDialog.Result>
                             <OutArgument x:TypeArguments="x:String">[Choice]</OutArgument>
                           </ui:InputDialog.Result>
@@ -244,16 +244,16 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="663,1452" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="663,1698" sap2010:WorkflowViewState.IdRef="Sequence_15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="601,1312" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="601,1558" sap2010:WorkflowViewState.IdRef="RetryScope_1">
                           <ui:RetryScope.ActivityBody>
                             <ActivityAction>
-                              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="559,991" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="559,1237" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -261,15 +261,15 @@
                                 </sap:WorkflowViewStateService.ViewState>
                                 <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get list of Flow Names" sap:VirtualizedContainerService.HintSize="497,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                                   <uix:NGetAttributeGeneric.Target>
-                                    <uix:TargetAnchorable DesignTimeRectangle="99, 184, 1174, 1157" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' role='list' /&gt;" Guid="e16b44f3-01d4-4777-8df9-8be3fc827ac0" InformativeScreenshot="3d85969a79416cb9dde7a4f6a9980261.png" ScopeSelectorArgument="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                                    <uix:TargetAnchorable DesignTimeRectangle="99, 184, 1174, 1157" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' role='list' /&gt;" Guid="e16b44f3-01d4-4777-8df9-8be3fc827ac0" InformativeScreenshot="3d85969a79416cb9dde7a4f6a9980261.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' title='Power Automate' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
                                   </uix:NGetAttributeGeneric.Target>
                                 </uix:NGetAttributeGeneric>
-                                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Ask user if export all flows, or a specific flow" sap:VirtualizedContainerService.HintSize="497,271" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="[&quot;Enter flow names to export.&quot;+Environment.NewLine+&#xA;&quot;If you would like to export several flows, please enter their names separated with ;&quot;+Environment.NewLine+&#xA;&quot;If you would like to export ALL flows, please enter All&quot;]" Title="Which flow would you like to export?">
+                                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Ask user if export all flows, or a specific flow" sap:VirtualizedContainerService.HintSize="497,271" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="[&quot;Enter flow name to export. &quot;+Environment.NewLine+&#xD;&#xA;&quot;If you would Like To export several flows, please enter their names separated With ;&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Enter All if you would like to export all available flows&quot;]" Title="Which flow to export?">
                                   <ui:InputDialog.Result>
                                     <OutArgument x:TypeArguments="x:String">[Choice]</OutArgument>
                                   </ui:InputDialog.Result>
                                 </ui:InputDialog>
-                                <Assign DisplayName="Clean up choice variable" sap:VirtualizedContainerService.HintSize="497,57" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign DisplayName="Clean up choice variable" sap:VirtualizedContainerService.HintSize="497,114" sap2010:WorkflowViewState.IdRef="Assign_1">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[Choice]</OutArgument>
                                   </Assign.To>
@@ -278,12 +278,12 @@
                                   </Assign.Value>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </Assign>
-                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Choice]" sap:VirtualizedContainerService.HintSize="497,170" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Choice]" sap:VirtualizedContainerService.HintSize="497,359" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                                   <Switch.Default>
                                     <Sequence sap:VirtualizedContainerService.HintSize="512,988" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -308,7 +308,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="OkCancel" ChosenButton="[ChosenButton]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Did not find user-selected flows in My flows.&quot;+Environment.NewLine+&#xA;&quot;Please verify if the entered flow names match the names in PAD My flows.&quot;+Environment.NewLine+&#xA;&quot;Click OK to try again, or Cancel to stop automation.&quot;]" />
+                                            <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Flows not found" ChosenButton="[ChosenButton]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;No flows with specified name found in My flows.&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Please verify if entered flow names match the names in PAD My Flows.&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Click OK to try again, or Cancel to stop automation.&quot;]" />
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
@@ -346,7 +346,7 @@
                       </Sequence>
                     </uix:NCheckState.IfNotExists>
                     <uix:NCheckState.Target>
-                      <uix:TargetAnchorable CVScreenId="83c9db1b-61ae-4b09-a194-ac38a25955bb" CvTextArea="223, 353, 334, 13" CvTextArgument="You don't have any flows. Create a flow to get started." CvType="Text" DesignTimeRectangle="225, 350, 332, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='DescriptionText' name='*Create a flow*' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='DescriptionText' name='*Create a flow*' role='text' check:text='You don&amp;apos;t have any flows. Create a flow to get started.' /&gt;" Guid="bd6503ed-66f3-4916-b868-012b1b6005e3" InformativeScreenshot="fdbe93c8c56658f3dfa4c42a3aa888c0.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' title='Power Automate' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      <uix:TargetAnchorable CVScreenId="83c9db1b-61ae-4b09-a194-ac38a25955bb" CvTextArea="223, 353, 334, 13" CvTextArgument="You don't have any flows. Create a flow to get started." CvType="Text" DesignTimeRectangle="225, 350, 332, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='EmptyFlowsListLabel' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='DescriptionText' name='*Create a flow*' role='text' check:text='You don&amp;apos;t have any flows. Create a flow to get started.' /&gt;" Guid="bd6503ed-66f3-4916-b868-012b1b6005e3" InformativeScreenshot="fdbe93c8c56658f3dfa4c42a3aa888c0.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' title='Power Automate' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                     </uix:NCheckState.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -362,7 +362,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="769, 436, 1200, 780" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="2c280677851a5409b1e4ea6fe45145d1.png" Selector="[&quot;&lt;wnd app='pad.console.host.exe' &quot;+PADWindowSelector+&quot; title='Power Automate' /&gt;&quot;]" Title="Power Automate" />
+        <uix:TargetApp Area="769, 436, 1200, 780" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="2c280677851a5409b1e4ea6fe45145d1.png" Selector="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' aaname='Power Automate' /&gt;" Title="Power Automate" />
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

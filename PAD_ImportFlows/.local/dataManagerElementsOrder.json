@@ -12,17 +12,18 @@
       "Path": "PAD_ImportFlows.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "ImportConfiguration&Sequence_7",
-        "SubflowDataFile&Sequence_127",
-        "BackupFolderInfo&Sequence_7",
-        "DirectoryList&Sequence_7",
-        "FoundFlows&Sequence_7",
-        "SubflowDataFile&Sequence_93",
         "BackupPath&Sequence_7",
         "FlowName&Sequence_7",
         "PADOpen&Sequence_7",
-        "PADWindowSelector&Sequence_7",
-        "Choice&Sequence_32"
+        "FoundFlows&Sequence_7",
+        "DirectoryList&Sequence_7",
+        "ImportConfiguration&Sequence_7",
+        "BackupFolderInfo&Sequence_7",
+        "FlowDesignerWindow&Sequence_7",
+        "PADMainMenuWindow&Sequence_7",
+        "SignInRequired&Sequence_7",
+        "SubflowDataFile&Sequence_93",
+        "SubflowDataFile&Sequence_127"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -35,10 +36,10 @@
         "SubflowCreated&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
+        "FlowDesignerWindow",
         "FlowName",
         "SubflowName",
-        "SubflowDataFile",
-        "PADWindowSelector"
+        "SubflowDataFile"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -48,7 +49,7 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
-        "PADWindowSelector",
+        "FlowDesignerWindow",
         "FlowName"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -61,7 +62,7 @@
         "BuildAFlowDialog&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "PADWindowSelector",
+        "PADMainMenuWindow",
         "FlowName"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -82,6 +83,7 @@
         "ArgumentData&Sequence_53"
       ],
       "ArgumentsSectionElementsOrder": [
+        "FlowDesignerWindow",
         "FlowName",
         "BackupPath"
       ],
@@ -95,9 +97,23 @@
         "ListOfFlowNames&Sequence_81"
       ],
       "ArgumentsSectionElementsOrder": [
+        "PADMainMenuWindow",
         "FoundFlows",
-        "PADWindowSelector",
         "FlowName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PAD Actions/PAD_CheckIfOpenAndSignedIn.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Choice&Sequence_33"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "PADOpen",
+        "SignInRequired",
+        "PADMainMenuWindow"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

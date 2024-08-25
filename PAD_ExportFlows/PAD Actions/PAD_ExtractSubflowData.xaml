@@ -1,14 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PAD_ExtractSubflowTabs" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PAD_ExtractSubflowTabs" this:PAD_ExtractSubflowTabs.SubflowName="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FlowName" Type="InArgument(x:String)" />
     <x:Property Name="SubflowName" Type="InArgument(x:String)" />
-    <x:Property Name="PADWindowSelector" Type="InArgument(x:String)" />
     <x:Property Name="CopiedData" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1867,2376</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1518,2264</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PAD_ExtractSubflowTabs_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -280,28 +279,20 @@
       <AssemblyReference>System.Windows.Forms.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_ExtractSubflowTabs" sap:VirtualizedContainerService.HintSize="592,2311" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PAD_ExtractSubflowTabs" sap:VirtualizedContainerService.HintSize="592,2199" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;PAD_ExtractSubflowTabs: START&quot;]" />
-    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[PADWindowSelector]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">cls='HwndWrapper*'</InArgument>
-      </Assign.Value>
-    </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="530,1772" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="530,1774" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1573" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1575" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -322,7 +313,7 @@
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Opening Subflow name: &quot;+SubflowName]" />
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Subflows'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="367, 88, 124, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='SubFlowDropDownButton' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='SubFlowDropDownButton' role='push button' check:text='Subflows' /&gt;" Guid="3ca6bc39-9700-4662-b43e-d28b014e6938" ImageBase64="" InformativeScreenshot="fe31aca3f16eb9ce0d3956697652daf5.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' {0} title='Power Automate | *{1}*' /&gt;&quot;, PADWindowSelector,FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable DesignTimeRectangle="367, 88, 124, 40" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='SubFlowDropDownButton' /&gt;" Guid="3ca6bc39-9700-4662-b43e-d28b014e6938" ImageBase64="" InformativeScreenshot="fe31aca3f16eb9ce0d3956697652daf5.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' aaname='Power Automate | *{0}*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -335,9 +326,9 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click Subflow Name" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click Subflow Dropdown Name" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable CVScreenId="26af2c74-ae4a-46bf-b874-6461f6bc6719" CvTextArea="29, 77, 28, 12" CvTextArgument="Main" CvType="Text" DesignTimeRectangle="30, 75, 27, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;ctrl automationid='SubFlowListView' /&gt;&lt;ctrl name='*{0}*' role='list item' /&gt;&lt;ctrl automationid='NameText' /&gt;&quot;, SubflowName)]" FuzzySelectorArgument="&lt;ctrl automationid='SubFlowListView' /&gt;&lt;ctrl name='Main' role='list item' /&gt;&lt;ctrl automationid='NameText' role='text' check:text='Main' /&gt;" Guid="277ef451-789d-476e-a20e-a7e9028376ec" InformativeScreenshot="6caf4c0b37534e3be967b9544fff52b7.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' {0} title='Power Automate | *{1}*' /&gt;&quot;, PADWindowSelector,FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable CVScreenId="26af2c74-ae4a-46bf-b874-6461f6bc6719" CvTextArea="29, 77, 28, 12" CvType="Text" DesignTimeRectangle="30, 75, 27, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;ctrl automationid='SubFlowListView' /&gt;&lt;ctrl name='*{0}*' role='list item' /&gt;&lt;ctrl automationid='NameText' /&gt;&quot;, SubflowName)]" Guid="277ef451-789d-476e-a20e-a7e9028376ec" InformativeScreenshot="6caf4c0b37534e3be967b9544fff52b7.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' idx='*' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -350,9 +341,9 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Subflow Name" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Right" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Subflow Tab Name" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Right" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable CVScreenId="31ca0c93-fe01-4511-a866-2519303d307d" CvElementArea="303, 80, 142, 41" CvTextArea="360, 95, 29, 12" CvTextArgument="Main" CvType="Button" DesignTimeRectangle="361, 93, 27, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='*{0}*' role='page tab' /&gt;&lt;ctrl name='*{0}*' role='text' /&gt;&quot;, SubflowName)]" FuzzySelectorArgument="[string.Format(&quot;&lt;ctrl name='{0}' role='page tab' /&gt;&lt;ctrl name='{0}' role='text' automationid='' check:text='{0}' /&gt;&quot;, SubflowName)]" Guid="4ca33654-f981-494d-a01b-1549f197a649" InformativeScreenshot="ecfdaca61cadb3739ae4d56225549253.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='Power Automate | {0}' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable CVScreenId="31ca0c93-fe01-4511-a866-2519303d307d" CvElementArea="303, 80, 142, 41" CvTextArea="360, 95, 29, 12" CvType="Button" DesignTimeRectangle="361, 93, 27, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;ctrl name='*{0}*' role='page tab' /&gt;&lt;ctrl name='*{0}*' role='text' /&gt;&quot;, SubflowName)]" Guid="4ca33654-f981-494d-a01b-1549f197a649" InformativeScreenshot="ecfdaca61cadb3739ae4d56225549253.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' aaname='Power Automate | *{0}*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -374,7 +365,7 @@
             </ui:SetToClipboard>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Copy'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f9e7f222-8850-4531-9d81-190ac9ed3a58" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable CVScreenId="79d0baf1-515c-4a36-ad7a-7e52d88988e7" CvTextArea="36, 199, 262, 15" CvTextArgument="Copy Ctrl+C" CvType="Text" DesignTimeRectangle="5, 187, 312, 36" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl automationid='SubFlowCopyMenuItem' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='SubFlowCopyMenuItem' role='menu item' check:text='Copy' /&gt;" Guid="e8291501-0c81-4996-8fae-25aba8e1274a" InformativeScreenshot="aa3a8b618ffa60a1eaf23e425e1c1cb9.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' {0} title='Power Automate | *{1}*' /&gt;&quot;, PADWindowSelector,FlowName)]" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable CVScreenId="79d0baf1-515c-4a36-ad7a-7e52d88988e7" CvTextArea="36, 199, 262, 15" CvType="Text" DesignTimeRectangle="5, 187, 312, 36" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl automationid='SubFlowCopyMenuItem' /&gt;" Guid="e8291501-0c81-4996-8fae-25aba8e1274a" InformativeScreenshot="aa3a8b618ffa60a1eaf23e425e1c1cb9.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' aastate='focusable' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -406,7 +397,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="240, 178, 1200, 800" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="74df229ae2270f8790660d594a48f5b7.png" Selector="[string.Format(&quot;&lt;wnd app='pad.designer.exe' {0} title='Power Automate | *{1}*' /&gt;&quot;, PADWindowSelector,FlowName)]" Title="Power Automate | Latest Latvian News Headlines" />
+        <uix:TargetApp Area="240, 178, 1200, 800" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="74df229ae2270f8790660d594a48f5b7.png" Selector="[string.Format(&quot;&lt;wnd app='pad.designer.exe' cls='HwndWrapper*' title='Power Automate | *{0}*' /&gt;&quot;, FlowName)]" Title="Power Automate | Latest Latvian News Headlines" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_ExtractSubflowTabs END&quot;]" />
