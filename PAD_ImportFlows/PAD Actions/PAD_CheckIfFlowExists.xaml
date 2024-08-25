@@ -4,7 +4,7 @@
     <x:Property Name="FoundFlows" Type="OutArgument(x:String)" />
     <x:Property Name="PADMainMenuWindow" Type="InArgument(ui:UiElement)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1463,1821</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1696,1861</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_CheckIfFlowExists" sap:VirtualizedContainerService.HintSize="1158,1756" sap2010:WorkflowViewState.IdRef="Sequence_81">
+  <Sequence DisplayName="PAD_CheckIfFlowExists" sap:VirtualizedContainerService.HintSize="1158,1796" sap2010:WorkflowViewState.IdRef="Sequence_81">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="ListOfFlowNames" />
     </Sequence.Variables>
@@ -130,13 +130,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1096,173" sap2010:WorkflowViewState.IdRef="LogMessage_36" Message="[&quot;PAD_CheckIfFlowExists: START&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1096,1331" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1096,1371" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1062,1162" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1062,1202" sap2010:WorkflowViewState.IdRef="Sequence_25">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,7 +170,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'You don't have any flows'" sap:VirtualizedContainerService.HintSize="1000,621" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'You don't have any flows'" sap:VirtualizedContainerService.HintSize="1000,661" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,372" sap2010:WorkflowViewState.IdRef="Sequence_68">
                   <sap:WorkflowViewStateService.ViewState>

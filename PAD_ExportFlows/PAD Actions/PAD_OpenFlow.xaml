@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1883,1004</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1696,1623</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PAD_OpenWorkflow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -190,7 +190,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_OpenFlow" sap:VirtualizedContainerService.HintSize="520,939" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PAD_OpenFlow" sap:VirtualizedContainerService.HintSize="616,1558" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="DesignerOpen" />
     </Sequence.Variables>
@@ -199,17 +199,17 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="458,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;PAD_OpenFlow: START&quot;]" />
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458,514" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;PAD_OpenFlow: START&quot;]" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="554,1133" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,193" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="512,812" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="db08f544-ca11-432e-adc0-dd12dcc6ec10" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="450,676" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="db08f544-ca11-432e-adc0-dd12dcc6ec10" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -257,12 +257,12 @@
               </uix:NApplicationCard.TargetApp>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NApplicationCard>
-            <uix:NCheckState DisplayName="Check App State 'Power Automate Designer Panel" EnableIfNotExists="False" Exists="[DesignerOpen]" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="NCheckState_2" OutUiElement="[FlowDesignerWindow]" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Power Automate Designer Panel" EnableIfNotExists="False" Exists="[DesignerOpen]" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="NCheckState_2" OutUiElement="[FlowDesignerWindow]" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
@@ -307,6 +307,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="458,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_OpenFlow: END&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;PAD_OpenFlow: END&quot;]" />
   </Sequence>
 </Activity>

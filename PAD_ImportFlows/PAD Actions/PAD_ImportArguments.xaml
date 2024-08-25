@@ -189,7 +189,7 @@
             </If>
             <ui:ReadTextFile File="{x:Null}" Content="[ArgumentData]" DisplayName="Read Argument data file" FileName="[ArgumentPropertyFile.FullName]" sap:VirtualizedContainerService.HintSize="2429,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
             <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[ArgumentPropertyDT]" DisplayName="Generate Argument correspondence table" sap:VirtualizedContainerService.HintSize="2429,233" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ArgumentData]" UseColumnHeader="True" />
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2429,4345" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[FlowDesignerWindow]" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2429,4345" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[FlowDesignerWindow]" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
