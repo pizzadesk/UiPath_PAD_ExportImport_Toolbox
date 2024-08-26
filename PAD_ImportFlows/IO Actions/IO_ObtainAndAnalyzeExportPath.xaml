@@ -1,11 +1,9 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="IO_ObtainAndAnalyzeExportPath" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="DirectoryList" Type="InOutArgument(scg:List(x:String))" />
-    <x:Property Name="BackupPath" Type="InOutArgument(x:String)" />
-    <x:Property Name="BackupFolderInfo" Type="OutArgument(si:DirectoryInfo)" />
-    <x:Property Name="ImportConfiguration" Type="OutArgument(x:String)" />
+    <x:Property Name="ImportPath" Type="OutArgument(x:String)" />
+    <x:Property Name="FolderFilter" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>686,1703</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1683,1710</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,107 +118,84 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="IO_ObtainAndAnalyzeExportPath" sap:VirtualizedContainerService.HintSize="688,1638" sap2010:WorkflowViewState.IdRef="Sequence_152">
+  <Sequence DisplayName="IO_ObtainAndAnalyzeExportPath" sap:VirtualizedContainerService.HintSize="592,1645" sap2010:WorkflowViewState.IdRef="Sequence_152">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="si:DirectoryInfo" Name="ImportDirectoryInfo" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Initialize list of path directories" sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_39">
-      <Assign.To>
-        <OutArgument x:TypeArguments="scg:List(x:String)">[DirectoryList]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="scg:List(x:String)">[new List(Of String)]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Backup Path" sap:VirtualizedContainerService.HintSize="626,271" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;Specify the directory for prevously exported flows&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;If you would like to import ALL previously exported PAD flows, please select the main exports folder.&quot;]" Title="Where to import PAD flows from?">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;IO_ObtainAndAnalyzeExportPath: START&quot;]" />
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Backup Path" sap:VirtualizedContainerService.HintSize="530,271" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;Specify the directory for prevously exported flows&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;If you would like to import ALL previously exported PAD flows, please select the main exports folder.&quot;]" Title="Where to import PAD flows from?">
       <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:String">[BackupPath]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[ImportPath]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Assign DisplayName="Remove &quot; from path" sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_40">
+    <Assign DisplayName="Remove &quot; from path" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_40">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[BackupPath]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[ImportPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[BackupPath.Replace("""","")]</InArgument>
+        <InArgument x:TypeArguments="x:String">[ImportPath.Replace("""","")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:GetFolderInfoX DisplayName="Get Folder Info" FolderPath="[BackupPath]" sap:VirtualizedContainerService.HintSize="626,165" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_2" Output="[BackupFolderInfo]" ThrowIfNotExists="False" />
-    <Assign DisplayName="Generate a list of directories in specified backup path" sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_41">
-      <Assign.To>
-        <OutArgument x:TypeArguments="scg:List(x:String)">[DirectoryList]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="scg:List(x:String)">[System.IO.Directory.GetDirectories(BackupPath).ToList]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Subfolder" sap:VirtualizedContainerService.HintSize="626,772" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[DirectoryList]">
-      <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="x:String">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:String" Name="Subfolder" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,635" sap2010:WorkflowViewState.IdRef="Sequence_151">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[BackupFolderInfo.Name.StartsWith(&quot;exported_&quot;)]" DisplayName="If Subfolder is Arguments or Subflows" sap:VirtualizedContainerService.HintSize="530,547" sap2010:WorkflowViewState.IdRef="If_18">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <If.Then>
-                <Sequence DisplayName="Then Assign Single Flow import configuration" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_149">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_42">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[ImportConfiguration]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">single flow</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else Assign all flow import configuration" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_150">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_44">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[ImportConfiguration]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">all flows</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                </Sequence>
-              </If.Else>
-            </If>
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEach.Body>
+    <ui:GetFolderInfoX DisplayName="Get Import Directory Info" FolderPath="[ImportPath]" sap:VirtualizedContainerService.HintSize="530,165" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_2" Output="[ImportDirectoryInfo]" ThrowIfNotExists="True" />
+    <If Condition="[ImportDirectoryInfo.Name.Contains(&quot;exported_&quot;)]" DisplayName="If Subfolder is Arguments or Subflows" sap:VirtualizedContainerService.HintSize="530,670" sap2010:WorkflowViewState.IdRef="If_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:ForEach>
+      <If.Then>
+        <Sequence DisplayName="Then Assign Single Flow import configuration" sap:VirtualizedContainerService.HintSize="496,307" sap2010:WorkflowViewState.IdRef="Sequence_149">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_49">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[ImportPath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[ImportDirectoryInfo.Parent.FullName]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_48">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[FolderFilter]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[ImportDirectoryInfo.Name]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else Assign all flow import configuration" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_150">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_47">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[FolderFilter]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;IO_ObtainAndAnalyzeExportPath: END&quot;]" />
   </Sequence>
 </Activity>
