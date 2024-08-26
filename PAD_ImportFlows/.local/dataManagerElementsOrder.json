@@ -12,6 +12,7 @@
       "Path": "PAD_ImportFlows.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "RequirementsMet&Sequence_7",
         "FlowReady&Sequence_7",
         "BackupPath&Sequence_7",
         "FlowName&Sequence_7",
@@ -128,6 +129,16 @@
         "BackupPath",
         "BackupFolderInfo",
         "ImportConfiguration"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "PAD Actions/PAD_ClosePopups.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "PADMainMenuWindow"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
