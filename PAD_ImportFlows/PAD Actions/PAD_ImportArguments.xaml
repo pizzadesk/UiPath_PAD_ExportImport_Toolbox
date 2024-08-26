@@ -4,7 +4,7 @@
     <x:Property Name="BackupPath" Type="InArgument(x:String)" />
     <x:Property Name="FlowDesignerWindow" Type="InArgument(ui:UiElement)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>2577,6114</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2577,6876</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_ImportArguments" sap:VirtualizedContainerService.HintSize="2587,6049" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="PAD_ImportArguments" sap:VirtualizedContainerService.HintSize="2587,6811" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ArgumentPropertyDT" />
       <Variable x:TypeArguments="x:String" Name="ArgumentType" />
@@ -131,8 +131,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2525,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;PAD_ImportArguments: START&quot;]" />
-    <ui:ForEachFileX DisplayName="For Each Arguments file in Backup folder" Filter="*.arg" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="2525,5624" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2525,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;PAD_ImportArguments: START&quot;]" />
+    <ui:ForEachFileX DisplayName="For Each Arguments file in Backup folder" Filter="*.arg" Folder="[BackupPath]" sap:VirtualizedContainerService.HintSize="2525,6384" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -141,7 +141,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2491,5334" sap2010:WorkflowViewState.IdRef="Sequence_53">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2491,6088" sap2010:WorkflowViewState.IdRef="Sequence_53">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="ArgumentData" />
               <Variable x:TypeArguments="x:Boolean" Name="DialogOpen" />
@@ -151,15 +151,15 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[ArgumentPropertyFile.FullName.contains(&quot;Input&quot;)]" DisplayName="If Argument comes from Input folder" sap:VirtualizedContainerService.HintSize="2429,556" sap2010:WorkflowViewState.IdRef="If_23">
+            <If Condition="[ArgumentPropertyFile.FullName.contains(&quot;Input&quot;)]" DisplayName="If Argument comes from Input folder" sap:VirtualizedContainerService.HintSize="2429,559" sap2010:WorkflowViewState.IdRef="If_23">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_193">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,194" sap2010:WorkflowViewState.IdRef="Sequence_193">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign Argument Type Input" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_21">
+                  <Assign DisplayName="Assign Argument Type Input" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_21">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[ArgumentType]</OutArgument>
                     </Assign.To>
@@ -170,13 +170,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_194">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="496,194" sap2010:WorkflowViewState.IdRef="Sequence_194">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign Argument Type Output" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_22">
+                  <Assign DisplayName="Assign Argument Type Output" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_22">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[ArgumentType]</OutArgument>
                     </Assign.To>
@@ -187,18 +187,18 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:ReadTextFile File="{x:Null}" Content="[ArgumentData]" DisplayName="Read Argument data file" FileName="[ArgumentPropertyFile.FullName]" sap:VirtualizedContainerService.HintSize="2429,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-            <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[ArgumentPropertyDT]" DisplayName="Generate Argument correspondence table" sap:VirtualizedContainerService.HintSize="2429,233" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ArgumentData]" UseColumnHeader="True" />
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2429,4345" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[FlowDesignerWindow]" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2" WindowResize="Maximize">
+            <ui:ReadTextFile File="{x:Null}" Content="[ArgumentData]" DisplayName="Read Argument data file" FileName="[ArgumentPropertyFile.FullName]" sap:VirtualizedContainerService.HintSize="2429,113" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+            <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[ArgumentPropertyDT]" DisplayName="Generate Argument correspondence table" sap:VirtualizedContainerService.HintSize="2429,235" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ArgumentData]" UseColumnHeader="True" />
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate | FlowName" sap:VirtualizedContainerService.HintSize="2429,5093" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[FlowDesignerWindow]" OpenMode="Never" ScopeGuid="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="2395,4185" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="2395,4932" sap2010:WorkflowViewState.IdRef="RetryScope_2">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="2353,3894" sap2010:WorkflowViewState.IdRef="Sequence_214">
+                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="2353,4640" sap2010:WorkflowViewState.IdRef="Sequence_214">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -216,7 +216,52 @@
                               </ui:Target>
                             </ui:Activate.Target>
                           </ui:Activate>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click New Argument" sap:VirtualizedContainerService.HintSize="2291,225" sap2010:WorkflowViewState.IdRef="NClick_67" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                          <uix:NCheckState DisplayName="Check App State 'Variables expanded panel'" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="2291,738" sap2010:WorkflowViewState.IdRef="NCheckState_52" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,104" sap2010:WorkflowViewState.IdRef="Sequence_215">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,487" sap2010:WorkflowViewState.IdRef="Sequence_216">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,177" sap2010:WorkflowViewState.IdRef="LogMessage_38" Message="[&quot;Expanded variables panel not present, expanding&quot;]" />
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Variables'" sap:VirtualizedContainerService.HintSize="388,220" sap2010:WorkflowViewState.IdRef="NClick_77" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable CVScreenId="53745147-35e9-47e5-bd3f-13a2046682a0" CvTextArea="2535, 53, 18, 15" CvTextArgument="{}{x}" CvType="Text" DesignTimeRectangle="2520, 39, 49, 45" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;" FuzzySelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' role='SidePanelItem' check:fulltext='Variables' /&gt;" Guid="bcf31e42-4be4-4bec-ae2d-68b14687b9c4" InformativeScreenshot="84b2fc3d85457c20e00a1abd75804065.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' automationid='DesignerMainWindow' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="2138, 39, 431, 1315" DesignTimeScaleFactor="1" ElementType="TabPageContainer" FullSelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' /&gt;" Guid="fb0de4f8-5cd9-4f64-a154-db50a8f06e8f" InformativeScreenshot="83ea0803659e6c44a14d0062c3215c18.png" ScopeSelectorArgument="&lt;wnd app='pad.designer.exe' automationid='DesignerMainWindow' cls='HwndWrapper*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click New Argument" sap:VirtualizedContainerService.HintSize="2291,227" sap2010:WorkflowViewState.IdRef="NClick_67" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable CVScreenId="a5d59aa7-67c6-45c2-b606-5b5e81b0bbdf" CvElementArea="1141, 151, 20, 20" CvTextArea="1145, 155, 10, 10" CvType="Button" DesignTimeRectangle="1032, 235, 42, 42" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' name='Input / output variables' /&gt;&lt;uia automationid='VariablesPanelInputOutput*AddArgumentButton' cls='DropDownButton' name='Add variable' /&gt;" FuzzySelectorArgument="&lt;uia cls='SidePanel' name='Variables' /&gt;&lt;uia automationid='VariablesSidePanelItem' cls='SidePanelItem' name='Variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariables' cls='Expander' name='Input / output variables' /&gt;&lt;uia automationid='VariablesPanelInputOutputVariablesAddArgumentButton' cls='DropDownButton' name='Add variable' role='button' check:fulltext='' /&gt;" Guid="1ae299d1-b8ae-40a9-81df-bd3bfa1673bc" ImageBase64="" InformativeScreenshot="da1e9a1014b9f33170b9032a5d2aeb3a.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' title='Power Automate | {0}' /&gt;&quot;, FlowName)]" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
                             </uix:NClick.Target>
@@ -237,7 +282,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NClick>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Argument Type" sap:VirtualizedContainerService.HintSize="2291,225" sap2010:WorkflowViewState.IdRef="NClick_68" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Argument Type" sap:VirtualizedContainerService.HintSize="2291,227" sap2010:WorkflowViewState.IdRef="NClick_68" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="38, 14, 119, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;uia cls='TextBlock' name='{0}' /&gt;&quot;, ArgumentType)]" FuzzySelectorArgument="&lt;uia cls='TextBlock' name='Input' role='text' automationid='' check:fulltext='Input' /&gt;" Guid="ae3d47fd-1689-4a0c-9475-91f7ae8ac4fa" InformativeScreenshot="f1818d6eac2b00f45ccdd94088dc48a0.png" ScopeSelectorArgument="[string.Format(&quot;&lt;wnd app='pad.designer.exe' title='Power Automate | {0}' cls='HwndWrapper*' /&gt;&quot;, FlowName)]" SearchSteps="Selector" SelectionStrategy="UIA" Version="V4" Visibility="Interactive" />
                             </uix:NClick.Target>
@@ -258,9 +303,9 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NClick>
-                          <uix:NCheckState DisplayName="Check App State 'New variable'" Exists="[DialogOpen]" sap:VirtualizedContainerService.HintSize="2291,3237" sap2010:WorkflowViewState.IdRef="NCheckState_51" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
+                          <uix:NCheckState DisplayName="Check App State 'New variable'" Exists="[DialogOpen]" sap:VirtualizedContainerService.HintSize="2291,3241" sap2010:WorkflowViewState.IdRef="NCheckState_51" ScopeIdentifier="6c977f39-0108-48ae-b8bb-31938c66645b" Version="V3">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1787,2997" sap2010:WorkflowViewState.IdRef="Sequence_212">
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1787,2999" sap2010:WorkflowViewState.IdRef="Sequence_212">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:Int32" Name="RowIndex" />
                                 </Sequence.Variables>
@@ -269,7 +314,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1725,175" sap2010:WorkflowViewState.IdRef="LogMessage_33" Message="[&quot;New variable dialog open, adding variable: &quot;+ArgumentPropertyFile.ToString]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1725,177" sap2010:WorkflowViewState.IdRef="LogMessage_33" Message="[&quot;New variable dialog open, adding variable: &quot;+ArgumentPropertyFile.ToString]" />
                                 <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[RowIndex]" DataTable="[ArgumentPropertyDT]" DisplayName="For Each Row with Argument data in Data Table" sap:VirtualizedContainerService.HintSize="1725,2514" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
                                   <ui:ForEachRow.Body>
                                     <ActivityAction x:TypeArguments="sd:DataRow">
