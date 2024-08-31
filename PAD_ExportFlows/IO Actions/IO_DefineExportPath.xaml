@@ -1,9 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="IO_DefineAndCreateBackupPath" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="IO_DefineAndCreateBackupPath" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="BackupDirectory" Type="OutArgument(upr:ILocalResource)" />
-    <x:Property Name="FolderInfo" Type="OutArgument(si:DirectoryInfo)" />
+    <x:Property Name="ExportPath" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1604,3596</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>741,3180</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -46,6 +45,12 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -133,146 +138,142 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Primitives</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Input Backup Path, Check Existence, Handle Files/Folders" sap:VirtualizedContainerService.HintSize="608,3531" sap2010:WorkflowViewState.IdRef="Sequence_55">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Input Export Path, Check Existence, Handle Files/Folders" sap:VirtualizedContainerService.HintSize="751,3115" sap2010:WorkflowViewState.IdRef="Sequence_55">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Choice" />
-      <Variable x:TypeArguments="x:String" Name="ExportPath" />
+      <Variable x:TypeArguments="si:DirectoryInfo" Name="FolderInfo" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_43" Message="[&quot;IO_DefineAndCreateExportPath: START&quot;]" />
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog for Backup Path" sap:VirtualizedContainerService.HintSize="546,271" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Specify the directory for storing exported workflows. If the directory does not exist, it will be created." Title="Where to export PAD flows?">
-      <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:String">[ExportPath]</OutArgument>
-      </ui:InputDialog.Result>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:InputDialog>
-    <Assign DisplayName="Remove double quotes from the path variable." sap:VirtualizedContainerService.HintSize="546,114" sap2010:WorkflowViewState.IdRef="Assign_20">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="689,175" sap2010:WorkflowViewState.IdRef="LogMessage_43" Message="[&quot;IO_DefineExportPath: START&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="689,115" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[ExportPath]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[Choice]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[ExportPath.Replace("""","")]</InArgument>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
       </Assign.Value>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[Directory.Exists(ExportPath)]" DisplayName="Check BackupPath Existence and Create if Necessary" sap:VirtualizedContainerService.HintSize="546,786" sap2010:WorkflowViewState.IdRef="If_9">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Sequence DisplayName="Log Existing Backup Path" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_49">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While User has not chosen a directory" sap:VirtualizedContainerService.HintSize="689,2571" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_5" MaxIterations="5">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="655,2424" sap2010:WorkflowViewState.IdRef="Sequence_89">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Info" Message="[ExportPath+&quot; exists, proceeding&quot;]" />
-        </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence DisplayName="Log Message and Create Backup Directory" sap:VirtualizedContainerService.HintSize="416,364" sap2010:WorkflowViewState.IdRef="Sequence_50">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[ExportPath+&quot; does not exist, creating&quot;]" />
-          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Backup Directory" sap:VirtualizedContainerService.HintSize="354,103" sap2010:WorkflowViewState.IdRef="CreateDirectory_9" Output="[BackupDirectory]" Path="[ExportPath]" />
-        </Sequence>
-      </If.Else>
-    </If>
-    <ui:GetFolderInfoX DisplayName="Get Folder Info" FolderPath="[BackupDirectory.LocalPath]" sap:VirtualizedContainerService.HintSize="546,165" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_3" Output="[FolderInfo]" ThrowIfNotExists="False">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:GetFolderInfoX>
-    <If Condition="[FolderInfo.GetFiles.Count&gt;0 or FolderInfo.GetDirectories.Count&gt;0]" DisplayName="Check Backup Folder for files/folders and prompt user accordingly." sap:VirtualizedContainerService.HintSize="546,1770" sap2010:WorkflowViewState.IdRef="If_10">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Sequence DisplayName="Choice Overwrite Folder" sap:VirtualizedContainerService.HintSize="512,1348" sap2010:WorkflowViewState.IdRef="Sequence_53">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InputDialog OptionsString="{x:Null}" DisplayName="Make a choice to overwrite or choose another folder" sap:VirtualizedContainerService.HintSize="450,324" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="[&quot;Files or folders already present in selected directory.&quot;+Environment.NewLine+&#xD;&#xA;&quot;Would you like to provide another Export directory?&quot;]" Options="[{&quot;YES - Provide another directory,NO - Use selected directory (Potentially OVERWRITE)&quot;}]" Title="Directory not empty!">
-            <ui:InputDialog.Result>
-              <OutArgument x:TypeArguments="x:String">[Choice]</OutArgument>
-            </ui:InputDialog.Result>
-          </ui:InputDialog>
-          <If Condition="[Choice.Contains(&quot;YES&quot;)]" DisplayName="If Choice Logic" sap:VirtualizedContainerService.HintSize="450,936" sap2010:WorkflowViewState.IdRef="If_11">
+          <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" Caption="Browse for folder" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="593,118" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;In the next folder browser dialog, please select a folder to which you would like to export the flows&quot;]" TopMost="True" />
+          <ui:SelectFolder DisplayName="Browse For Folder" sap:VirtualizedContainerService.HintSize="593,112" sap2010:WorkflowViewState.IdRef="SelectFolder_3" SelectedFolder="[ExportPath]" />
+          <ui:GetFolderInfoX DisplayName="Get Folder Info" FolderPath="[ExportPath]" sap:VirtualizedContainerService.HintSize="593,167" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_6" Output="[FolderInfo]" ThrowIfNotExists="True">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:GetFolderInfoX>
+          <If Condition="[FolderInfo.GetFiles.Count&gt;0 or FolderInfo.GetDirectories.Count&gt;0]" DisplayName="Check Backup Folder for files/folders and prompt user accordingly." sap:VirtualizedContainerService.HintSize="593,1939" sap2010:WorkflowViewState.IdRef="If_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Log Message and Input Dialog" sap:VirtualizedContainerService.HintSize="416,523" sap2010:WorkflowViewState.IdRef="Sequence_51">
+              <Sequence DisplayName="Choice Overwrite Folder" sap:VirtualizedContainerService.HintSize="559,1466" sap2010:WorkflowViewState.IdRef="Sequence_98">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_40" Message="[&quot;Prompting for another path&quot;]" />
-                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog for Backup Path" sap:VirtualizedContainerService.HintSize="354,262" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="Specify the directory for storing exported workflows. If the directory does not exist, it will be created." Title="Where to export PAD flows?">
+                <ui:InputDialog Options="{x:Null}" DisplayName="Make a choice to overwrite or choose another folder" sap:VirtualizedContainerService.HintSize="497,329" sap2010:WorkflowViewState.IdRef="InputDialog_14" IsPassword="False" Label="[&quot;The folder you chose for exporting flows already contains &quot;+FolderInfo.GetDirectories.Count.ToString+&quot; folders.&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Provide a different export folder?&quot;]" OptionsString="[&quot;Provide another folder&quot; + &quot;;&quot; + &quot;Use selected folder (Risk OVERWRITE)&quot; + &quot;;&quot; + &quot;Cancel&quot;]" Title="Directory not empty">
                   <ui:InputDialog.Result>
-                    <OutArgument x:TypeArguments="x:String">[ExportPath]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[Choice]</OutArgument>
                   </ui:InputDialog.Result>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InputDialog>
+                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Choice]" sap:VirtualizedContainerService.HintSize="497,1049" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                  <Switch.Default>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_63" Message="[&quot;User did not make a choice, retrying&quot;]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                  </Switch.Default>
+                  <ui:LogMessage x:Key="Provide another directory" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_59" Message="[&quot;Prompting for another path&quot;]" />
+                  <Sequence x:Key="Use selected directory (Risk OVERWRITE)" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_60" Message="[&quot;Overwrite existing Export files/folders: &quot;+Choice.ToString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:LogMessage>
+                    <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_4" />
+                  </Sequence>
+                  <ui:Break x:Key="Cancel" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Break_6" />
+                </Switch>
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Log Message with Choice" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_52">
+              <Sequence DisplayName="Log Message No Files Found" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_99">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_41" Message="[&quot;Overwrite existing Export files/folders: &quot;+Choice.ToString]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_62" Message="[&quot;No files/folders found in &quot;+ExportPath+&quot;. Proceeding with process&quot;]" />
+                <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_5" />
               </Sequence>
             </If.Else>
           </If>
         </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence DisplayName="Log Message No Files Found" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_54">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_42" Message="[&quot;No files/folders found in &quot;+ExportPath]" />
-        </Sequence>
-      </If.Else>
-    </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,164" sap2010:WorkflowViewState.IdRef="LogMessage_44" Message="[&quot;IO_DefineAndCreateExportPath: END&quot;]" />
+      </ui:InterruptibleDoWhile.Body>
+      <ui:InterruptibleDoWhile.Condition>
+        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Choice.Equals(&quot;Provide another directory&quot;) or String.IsNullOrEmpty(Choice)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+      </ui:InterruptibleDoWhile.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InterruptibleDoWhile>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="689,166" sap2010:WorkflowViewState.IdRef="LogMessage_44" Message="[&quot;IO_DefineExportPath: END&quot;]" />
   </Sequence>
 </Activity>

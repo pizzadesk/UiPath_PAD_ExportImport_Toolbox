@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="RequirementsMet" Type="OutArgument(x:Boolean)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1693,2019</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1705,2469</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -45,6 +45,7 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -136,19 +137,20 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="IO_CheckResolutionRequirements" sap:VirtualizedContainerService.HintSize="688,1954" sap2010:WorkflowViewState.IdRef="Sequence_47">
+  <Sequence DisplayName="IO_CheckResolutionRequirements" sap:VirtualizedContainerService.HintSize="704,2404" sap2010:WorkflowViewState.IdRef="Sequence_47">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:Size" Name="LowestResolution" />
       <Variable x:TypeArguments="sd:Size" Name="CurrentResolution" />
       <Variable x:TypeArguments="x:String" Name="ChosenButton" />
+      <Variable x:TypeArguments="x:Int32" Name="RetryNumber" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,173" sap2010:WorkflowViewState.IdRef="LogMessage_38" Message="[&quot;IO_CheckResolutionRequirements: START&quot;]" />
-    <Assign sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_23">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="642,173" sap2010:WorkflowViewState.IdRef="LogMessage_38" Message="[&quot;IO_CheckResolutionRequirements: START&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="642,114" sap2010:WorkflowViewState.IdRef="Assign_23">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[RequirementsMet]</OutArgument>
       </Assign.To>
@@ -156,15 +158,15 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While requirements not met or user clicks OK, 5 iterations" sap:VirtualizedContainerService.HintSize="626,1415" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
+    <ui:InterruptibleDoWhile Condition="[RequirementsMet=False]" CurrentIndex="[RetryNumber]" DisplayName="Do While requirements not met or user clicks OK, 5 iterations" sap:VirtualizedContainerService.HintSize="642,1865" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,1269" sap2010:WorkflowViewState.IdRef="Sequence_46">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="608,1719" sap2010:WorkflowViewState.IdRef="Sequence_46">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Identify current resolution" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_19">
+          <Assign DisplayName="Identify current resolution" sap:VirtualizedContainerService.HintSize="546,114" sap2010:WorkflowViewState.IdRef="Assign_19">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:Size">[CurrentResolution]</OutArgument>
             </Assign.To>
@@ -172,7 +174,7 @@
               <InArgument x:TypeArguments="sd:Size">[New System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width, System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height)]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Lowest resolution" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_20">
+          <Assign DisplayName="Lowest resolution" sap:VirtualizedContainerService.HintSize="546,114" sap2010:WorkflowViewState.IdRef="Assign_20">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:Size">[LowestResolution]</OutArgument>
             </Assign.To>
@@ -180,7 +182,7 @@
               <InArgument x:TypeArguments="sd:Size">[New System.Drawing.Size(1024, 768)]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[currentResolution.Width &gt;= lowestResolution.Width AndAlso currentResolution.Height &gt;= lowestResolution.Height]" sap:VirtualizedContainerService.HintSize="530,953" sap2010:WorkflowViewState.IdRef="If_8">
+          <If Condition="[currentResolution.Width &gt;= lowestResolution.Width AndAlso currentResolution.Height &gt;= lowestResolution.Height]" DisplayName="If current resolution is equal or bigger than lowest allowed resolution" sap:VirtualizedContainerService.HintSize="546,1403" sap2010:WorkflowViewState.IdRef="If_8">
             <If.Then>
               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,423" sap2010:WorkflowViewState.IdRef="Sequence_44">
                 <sap:WorkflowViewStateService.ViewState>
@@ -201,23 +203,42 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,369" sap2010:WorkflowViewState.IdRef="Sequence_45">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,819" sap2010:WorkflowViewState.IdRef="Sequence_45">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Warn" Message="[&quot;Screen resolution requirements are not met, prompting user to change&quot;]" />
-                <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Screen resolution too low" ChosenButton="[ChosenButton]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please ensure the primary screen resolution is set to a minimum of 1024x768 to prevent UI automation errors, then click OK.&quot;+Environment.NewLine+&#xA;&quot;Click on Cancel to stop the process.&quot;]" TopMost="True" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Warn" Message="[&quot;Screen resolution requirements are not met, prompting user to change&quot;]" />
+                <If Condition="[RetryNumber&gt;5]" sap:VirtualizedContainerService.HintSize="450,558" sap2010:WorkflowViewState.IdRef="If_9">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw Exception="[new Exception(&quot;Screen resolution requirements are not met, prompting user to change&quot;)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,196" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Screen resolution too low" ChosenButton="[ChosenButton]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please ensure the primary screen resolution is set to a minimum of 1024x768 to prevent UI automation errors, then click OK.&quot;+Environment.NewLine+&#xA;&quot;Click on Cancel to stop the process.&quot;]" TopMost="True" />
+                    </Sequence>
+                  </If.Else>
+                </If>
               </Sequence>
             </If.Else>
           </If>
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
-      <ui:InterruptibleDoWhile.Condition>
-        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="RequirementsMet=False" />
-      </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="626,164" sap2010:WorkflowViewState.IdRef="LogMessage_39" Message="[&quot;IO_CheckResolutionRequirements: END&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="642,164" sap2010:WorkflowViewState.IdRef="LogMessage_39" Message="[&quot;IO_CheckResolutionRequirements: END&quot;]" />
   </Sequence>
 </Activity>

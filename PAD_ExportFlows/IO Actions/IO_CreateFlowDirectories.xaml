@@ -1,13 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="IO_CreateFlowDirectories" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FlowName" Type="InArgument(x:String)" />
-    <x:Property Name="BackupDirectory" Type="InArgument(upr:ILocalResource)" />
     <x:Property Name="FlowMainFolder" Type="OutArgument(upr:ILocalResource)" />
     <x:Property Name="FlowArgumentsInputFolder" Type="OutArgument(upr:ILocalResource)" />
     <x:Property Name="FlowArgumentsOutputFolder" Type="OutArgument(upr:ILocalResource)" />
     <x:Property Name="SubflowDataFolder" Type="OutArgument(upr:ILocalResource)" />
+    <x:Property Name="ExportPath" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1883,938</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1316,986</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -50,6 +50,7 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Platform</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -146,7 +147,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;IO_CreateFlowDirectories: START&quot;]" />
-    <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder named with Flow name" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_8" Output="[FlowMainFolder]" Path="[BackupDirectory.LocalPath+&quot;\exported_&quot;+FlowName]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder named with Flow name" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_8" Output="[FlowMainFolder]" Path="[ExportPath+&quot;\exported_&quot;+FlowName]" />
     <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder with Flow Input Arguments" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_9" Output="[FlowArgumentsInputFolder]" Path="[FlowMainFolder.LocalPath+&quot;\Arguments\Input&quot;]" />
     <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder with Flow Output Arguments" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_10" Output="[FlowArgumentsOutputFolder]" Path="[FlowMainFolder.LocalPath+&quot;\Arguments\Output&quot;]" />
     <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder for Subflow data" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_11" Output="[SubflowDataFolder]" Path="[FlowMainFolder.LocalPath+&quot;\Subflows&quot;]" />

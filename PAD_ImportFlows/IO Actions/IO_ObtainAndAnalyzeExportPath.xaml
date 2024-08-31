@@ -3,7 +3,7 @@
     <x:Property Name="ImportPath" Type="OutArgument(x:String)" />
     <x:Property Name="FolderFilter" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1683,1710</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>582,1553</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -118,7 +118,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="IO_ObtainAndAnalyzeExportPath" sap:VirtualizedContainerService.HintSize="592,1645" sap2010:WorkflowViewState.IdRef="Sequence_152">
+  <Sequence DisplayName="IO_ObtainAndAnalyzeExportPath" sap:VirtualizedContainerService.HintSize="592,1488" sap2010:WorkflowViewState.IdRef="Sequence_152">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:DirectoryInfo" Name="ImportDirectoryInfo" />
     </Sequence.Variables>
@@ -128,19 +128,8 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;IO_ObtainAndAnalyzeExportPath: START&quot;]" />
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Backup Path" sap:VirtualizedContainerService.HintSize="530,271" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;Specify the directory for prevously exported flows&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;If you would like to import ALL previously exported PAD flows, please select the main exports folder.&quot;]" Title="Where to import PAD flows from?">
-      <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:String">[ImportPath]</OutArgument>
-      </ui:InputDialog.Result>
-    </ui:InputDialog>
-    <Assign DisplayName="Remove &quot; from path" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_40">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[ImportPath]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[ImportPath.Replace("""","")]</InArgument>
-      </Assign.Value>
-    </Assign>
+    <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="Ok" Caption="Browse for folder" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="530,117" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;In the next folder browser dialog, please select the folder for a Flow you would like to import&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Select a top-level folder to import all flows, or a specific flow folder named exported_X to import only one flow&quot;]" TopMost="True" />
+    <ui:SelectFolder DisplayName="Browse For Folder" sap:VirtualizedContainerService.HintSize="530,111" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[ImportPath]" />
     <ui:GetFolderInfoX DisplayName="Get Import Directory Info" FolderPath="[ImportPath]" sap:VirtualizedContainerService.HintSize="530,165" sap2010:WorkflowViewState.IdRef="GetFolderInfoX_2" Output="[ImportDirectoryInfo]" ThrowIfNotExists="True" />
     <If Condition="[ImportDirectoryInfo.Name.Contains(&quot;exported_&quot;)]" DisplayName="If Subfolder is Arguments or Subflows" sap:VirtualizedContainerService.HintSize="530,670" sap2010:WorkflowViewState.IdRef="If_18">
       <sap:WorkflowViewStateService.ViewState>

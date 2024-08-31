@@ -3,7 +3,7 @@
     <x:Property Name="ListOfFlowNames" Type="OutArgument(scg:List(x:String))" />
     <x:Property Name="PADMainMenuWindow" Type="InArgument(ui:UiElement)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1693,4215</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1692,3183</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -135,7 +135,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_ExtractMyFlowsList" sap:VirtualizedContainerService.HintSize="1536,4150" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="PAD_ExtractMyFlowsList" sap:VirtualizedContainerService.HintSize="1536,3118" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ChosenButton" />
       <Variable x:TypeArguments="x:String" Name="Choice" />
@@ -154,13 +154,13 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new List(Of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1474,3611" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1474,2579" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1440,3442" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1440,2410" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="NoFlowsFound" />
             </Sequence.Variables>
@@ -181,9 +181,9 @@
                 </ui:Target>
               </ui:Activate.Target>
             </ui:Activate>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not Choice.Equals(&quot;Stop the automation&quot;) and NoFlowsFound=True]" DisplayName="Do While flows appear in My Flows or user does not choose to stop automation" sap:VirtualizedContainerService.HintSize="1378,3233" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not Choice.Equals(&quot;Stop the automation&quot;) and NoFlowsFound=True]" DisplayName="Do While flows appear in My Flows or user does not choose to stop automation" sap:VirtualizedContainerService.HintSize="1378,2201" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1344,3094" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1344,2062" sap2010:WorkflowViewState.IdRef="Sequence_16">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -204,7 +204,7 @@
                       </uix:VerifyExecutionOptions>
                     </uix:NClick.VerifyOptions>
                   </uix:NClick>
-                  <uix:NCheckState DisplayName="Check App State 'You don't have any flows'" Exists="[NoFlowsFound]" sap:VirtualizedContainerService.HintSize="1282,2781" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'You don't have any flows'" Exists="[NoFlowsFound]" sap:VirtualizedContainerService.HintSize="1282,1749" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1259" sap2010:WorkflowViewState.IdRef="Sequence_14">
                         <sap:WorkflowViewStateService.ViewState>
@@ -244,32 +244,32 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="716,2541" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="716,1509" sap2010:WorkflowViewState.IdRef="Sequence_15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="654,2401" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="654,1369" sap2010:WorkflowViewState.IdRef="RetryScope_1">
                           <ui:RetryScope.ActivityBody>
                             <ActivityAction>
-                              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="612,2080" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="559,1048" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get list of Flow Names" sap:VirtualizedContainerService.HintSize="550,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
+                                <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get list of Flow Names" sap:VirtualizedContainerService.HintSize="497,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[ListOfFlowNames]" ScopeIdentifier="bb24e69b-15dd-47ca-af09-f66c4214fb08" Version="V3">
                                   <uix:NGetAttributeGeneric.Target>
                                     <uix:TargetAnchorable DesignTimeRectangle="99, 184, 1174, 1157" DesignTimeScaleFactor="1" ElementType="List" FullSelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='ProcessesTabControl' /&gt;&lt;ctrl automationid='MyFlowsTab' /&gt;&lt;ctrl automationid='MyFlowsListGrid' role='list' /&gt;" Guid="e16b44f3-01d4-4777-8df9-8be3fc827ac0" InformativeScreenshot="3d85969a79416cb9dde7a4f6a9980261.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' title='Power Automate' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
                                   </uix:NGetAttributeGeneric.Target>
                                 </uix:NGetAttributeGeneric>
-                                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Ask user if export all flows, or a specific flow" sap:VirtualizedContainerService.HintSize="550,271" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="[&quot;Enter flow name to export. &quot;+Environment.NewLine+&#xA;&quot;If you would Like To export several flows, please enter their names separated With ;&quot;+Environment.NewLine+&#xA;Environment.NewLine+&#xA;&quot;Enter All if you would like to export all available flows&quot;]" Title="Which flow to export?">
+                                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Ask user if export all flows, or a specific flow" sap:VirtualizedContainerService.HintSize="497,271" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="[&quot;Enter flow name to export. &quot;+Environment.NewLine+&#xD;&#xA;&quot;If you would Like To export several flows, please enter their names separated With ;&quot;+Environment.NewLine+&#xD;&#xA;Environment.NewLine+&#xD;&#xA;&quot;Enter All if you would like to export all available flows&quot;]" Title="Which flow to export?">
                                   <ui:InputDialog.Result>
                                     <OutArgument x:TypeArguments="x:String">[Choice]</OutArgument>
                                   </ui:InputDialog.Result>
                                 </ui:InputDialog>
-                                <Assign DisplayName="Clean up choice variable" sap:VirtualizedContainerService.HintSize="550,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign DisplayName="Clean up choice variable" sap:VirtualizedContainerService.HintSize="497,114" sap2010:WorkflowViewState.IdRef="Assign_1">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[Choice]</OutArgument>
                                   </Assign.To>
@@ -283,7 +283,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </Assign>
-                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Choice]" sap:VirtualizedContainerService.HintSize="550,1202" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Choice]" sap:VirtualizedContainerService.HintSize="497,170" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                                   <Switch.Default>
                                     <Sequence DisplayName="Export specific flows" sap:VirtualizedContainerService.HintSize="512,988" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -332,7 +332,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:LogMessage x:Key="All" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;User chose to export All flows, using already extracted list of items&quot;]" />
                                 </Switch>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="550,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;User selected the following Flows to export: &quot;+String.Join(&quot;;&quot;,ListOfFlowNames)]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;User selected the following Flows to export: &quot;+String.Join(&quot;;&quot;,ListOfFlowNames)]" />
                               </Sequence>
                             </ActivityAction>
                           </ui:RetryScope.ActivityBody>
