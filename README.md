@@ -16,16 +16,16 @@ Welcome to the Windows-based UiPath Activities for PAD flow Export and Import re
 -  Folder structure
 
 ```plaintext
-    Export Folder
-    ——ExportedFlow_1
+    Export Folder defined in Browse For Folder prompt
+    ——exported_FlowName
     ——-Subflows
-    ————Main.txt
-    ————Subflow_X.txt
+    ————Main.subflow
+    ————SubflowName.subflow
     ——-Arguments
     ————Input
-    —————InputArgument.txt
+    —————InputArgument.arg
     ————Output
-    —————OutputArgument.txt
+    —————OutputArgument.arg
 ```
 
 ## Video showcase
@@ -44,8 +44,8 @@ https://github.com/user-attachments/assets/ff33376c-c4c8-478f-bfe4-1b83bb497d15
 ## Getting Started
 
 - Run the process in **Attended mode
-- For Export: Select backup folder via popup dialog
-- For Import: Select backup-containing folder for all backups at once, or for a specific folder
+- For Export: Select export folder via popup dialog
+- For Import: Select export-containing folder for all backups at once, or for a specific folder
 
 
 ### Prerequisites
