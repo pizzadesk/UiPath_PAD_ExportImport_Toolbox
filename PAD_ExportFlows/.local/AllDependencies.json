@@ -17959,19 +17959,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\UiPathDev Win10\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "PAD_ExportFlows",
       "projectName": "PAD_ExportFlows",
-      "projectPath": "G:\\UiPath_PAD_ExportImport_Toolbox\\PAD_ExportFlows\\.local",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "G:\\UiPath_PAD_ExportImport_Toolbox\\PAD_ExportFlows\\.local",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ]
+      "projectPath": "C:\\Users\\UiPathDev Win10\\Documents\\GitHub\\UiPath_PAD_ExportImport_Toolbox\\PAD_ExportFlows\\.local",
+      "packagesPath": "C:\\Users\\UiPathDev Win10\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\UiPathDev Win10\\Documents\\GitHub\\UiPath_PAD_ExportImport_Toolbox\\PAD_ExportFlows\\.local"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -17987,7 +17983,7 @@
             "version": "[24.10.0, 24.10.0]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\UiPathDev Win10\\AppData\\Local\\Programs\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -108,7 +108,8 @@
       "Path": "PAD Actions/PAD_CheckIfOpenAndSignedIn.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "Choice&Sequence_33"
+        "Choice&Sequence_152",
+        "aastate&Sequence_152"
       ],
       "ArgumentsSectionElementsOrder": [
         "PADOpen",

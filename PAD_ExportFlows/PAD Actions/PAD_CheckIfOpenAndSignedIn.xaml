@@ -4,7 +4,7 @@
     <x:Property Name="SignInRequired" Type="OutArgument(x:Boolean)" />
     <x:Property Name="PADMainMenuWindow" Type="OutArgument(ui:UiElement)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1792,2794</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1876,5338</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -42,6 +42,7 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -119,18 +120,19 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PAD_CheckIfOpenAndSignedIn" sap:VirtualizedContainerService.HintSize="1802,2729" sap2010:WorkflowViewState.IdRef="Sequence_151">
+  <Sequence DisplayName="PAD_CheckIfOpenAndSignedIn" sap:VirtualizedContainerService.HintSize="1802,5273" sap2010:WorkflowViewState.IdRef="Sequence_171">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1740,173" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info" Message="[&quot;PAD_CheckIfOpenAndSignedIn: START&quot;]" />
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not PADOpen or SignInRequired]" DisplayName="Do While PAD is not opened" sap:VirtualizedContainerService.HintSize="1740,2304" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1740,173" sap2010:WorkflowViewState.IdRef="LogMessage_66" Level="Info" Message="[&quot;PAD_CheckIfOpenAndSignedIn: START&quot;]" />
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[not PADOpen or SignInRequired]" DisplayName="Do While PAD is not opened" sap:VirtualizedContainerService.HintSize="1740,4848" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2" MaxIterations="5">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1706,2158" sap2010:WorkflowViewState.IdRef="Sequence_33">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1706,4702" sap2010:WorkflowViewState.IdRef="Sequence_157">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="Choice" />
+            <Variable x:TypeArguments="x:String" Name="aastate" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -138,59 +140,151 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1644,173" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[&quot;Checking if PAD is open&quot;]" />
-          <uix:NCheckState DisplayName="Check App State 'Power Automate'" Exists="[PADOpen]" sap:VirtualizedContainerService.HintSize="1644,1897" sap2010:WorkflowViewState.IdRef="NCheckState_4" OutUiElement="[PADMainMenuWindow]" Version="V3">
+          <Assign sap:VirtualizedContainerService.HintSize="1644,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[aastate]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">invisible</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1644,173" sap2010:WorkflowViewState.IdRef="LogMessage_67" Message="[&quot;Checking if PAD is launched&quot;]" />
+          <uix:NCheckState DisplayName="Check App State 'Power Automate'" Exists="[PADOpen]" sap:VirtualizedContainerService.HintSize="1644,4327" sap2010:WorkflowViewState.IdRef="NCheckState_9" OutUiElement="[PADMainMenuWindow]" Version="V3">
             <uix:NCheckState.IfExists>
-              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1078,1617" sap2010:WorkflowViewState.IdRef="Sequence_34">
+              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1078,4087" sap2010:WorkflowViewState.IdRef="Sequence_167">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1016,175" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Power Automate window is Open, proceeding&quot;]" />
-                <uix:NCheckState DisplayName="Check App State 'Sign in'" Exists="[SignInRequired]" sap:VirtualizedContainerService.HintSize="1016,1352" sap2010:WorkflowViewState.IdRef="NCheckState_7" Version="V3">
-                  <uix:NCheckState.IfExists>
-                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1110" sap2010:WorkflowViewState.IdRef="Sequence_147">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1016,175" sap2010:WorkflowViewState.IdRef="LogMessage_68" Message="[&quot;Power Automate window is launched, checking if visible&quot;]" />
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Power Automate" sap:VirtualizedContainerService.HintSize="1016,646" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[PADMainMenuWindow]" OpenMode="Never" ScopeGuid="53f2a22e-f16a-46da-b230-a445839b9061" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,477" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_69" Message="[&quot;Getting PAD window aastate attribute&quot;]" />
+                        <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="aastate" ContinueOnError="True" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="354,212" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" InUiElement="[PADMainMenuWindow]" Result="[aastate]" Version="V3">
+                          <uix:NGetAttributeGeneric.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="fc509fa6-5fd3-461c-94e2-5bb4d128bc32" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' aaname='Power Automate' /&gt;" SearchSteps="Selector" />
+                          </uix:NGetAttributeGeneric.Target>
+                        </uix:NGetAttributeGeneric>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="62, 96, 1200, 780" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATHSURBVFhH7ZZLUFtlFIBZuDX3D9pxKcOqQ2kTA+U1o4WGAoGUAl3oQocppbTSKilteRRqgLbaim1w4Yyj41Q3utAZBqQ8wzNtebQ2KHWhmywcZ7qRSyGAJjf3eP7HJY8JN9npomfmm3POf2f+7z/c/Akpz+M/D1LzxJVa8wSMu1G9AqR6RSVVv4Cx6mdkGYzHvMhjIJU/ATlKecgw2pcg/fRvUPDptlNsnzhQshoW/qoaa1aYlIFSwqTIsWUUelVS+VglRx+h8JFK7Ci2P1RJxSJI5QvqK9WzUHB7Ewpcm5B/y+8QCv0gx1eadoQMTconRaE2KYqpcIkhVSyieAFI+TwQ2wN42e6G3Jsy5N/2Uzkjr3ejUGj0g1StOOmUBKWkcplPiVIjm1RMyaQoFFLJNq8S232Qyu6re6rmIavnaVj8yc4h5DyXnCY0+oET3uGTRku5cCEsFFKpzANS6Rykls9B1tVVJo1Lr9+X1CFIlZdI9iUvl/J3qv15tUkJSglKKVLJDEjF45DR/Dvk9m4gfpZRCLkfixxe9xa6ZCJUuwcpm09DqU+yPVAl2z0+aamHiaWSWRQjVFwyDZJ1HNLrFpksR0BrDj+E9ozmss+3poVGP9ghyjw+/POqVMgmPTKjSkdQWjyJuMFgnYD0ei/k3ERBAnKRQ31+aJkOQcc9cAmNfpASjwmFMqJyKWJ1IxNs8ldrvXDwxkZccgRa/YbLD45xBdpmVWifU6HNA8l9R7xona41WN0qlRoOj4OhaAykolHYYxuCgx+tx4BCJDtmPR/ffxPKW2dCHDxE62wI2mehVmj0w3B4zEmlUtEIGApH1NTiATB1/AnZH66HQVFkzw4i6lMDAbiE4pYZdYdL+Cpa6GE8YBIa/TAU3u0zHBqCl0rHwNT5FLKuryfFW9/+DRdRdnEqEoWvceTWaUjuOyLVOvh1ZssfkHUNN4/AQjMVRq5jf/ybbbgwpcKFSQVzKA74jNdeodAP3Ljfcu0ZWK5Gww4Rs1b51RY0T4bgvGCndivQjGJtjTEV8gnF7mHp2XC+1vMM4mGJ6V+/tQEOFDncIZabJrSa9zSfpzVbV3yORK/AjHJzN25OERLWR0g18vG+Nw4HURpivI+ffnoD6CFYjTnymWM8YBaa+GHuXq+lsnjQA5m718DchWCdd2MdGgYDuDHf/D1Eq7Wer3EcEwH9n2pzl2w2da3JCGgwWUStrWfjZ+MUys+NKUhIZGQ0Ju8Q7BKa+LG3S04zOdd8CCTiwAdreN224SyKz6JIo3EkXEdybjjYJzTxAydPw019dGNdrvBs/3KLySjvChpHQzxHwPoxpV9odo0XDnTK3v1XZC5AaM17nsPPZKj4YgvODOPmCM1hgoKodZ+jH/R/jk0d8p39nSiJAg+BOTNmveSzTWi4G4TTDEXAe76urSnYK74z/QmuW+Zl2ZnZgaIkyLmOH7ohFCE0x4M+axhSaC0nJ7+MmyP7RGayiJ5migWv3js/BODkj0Goj0KJ6k/irRB14n9K97WvQhgURfWcDMSCV+7t71E+SAUIE2m1wnKd1iP1QwnuuhYZbX/1ZbShRMCEtNYygh9OePO7f+AE/rxSyYkBSiAq17GaHkKhtf5dfx7/n0hJ+RfaN01MZyvaKwAAAABJRU5ErkJggg==" InformativeScreenshot="0737338195be303199628b469ec2328e.png" Selector="&lt;wnd app='pad.console.host.exe' cls='HwndWrapper*' aaname='Power Automate' /&gt;" Title="Power Automate" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+                <If Condition="[aastate.contains(&quot;invisible&quot;)]" sap:VirtualizedContainerService.HintSize="1016,1824" sap2010:WorkflowViewState.IdRef="If_24">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1281" sap2010:WorkflowViewState.IdRef="Sequence_161">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_55" Level="Warn" Message="[&quot;User needs to sign in to PAD&quot;]" />
-                      <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Ensure Power Automate is signed into" ChosenButton="[Choice]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[&quot;Please sign in to Power Automate and click OK&quot;]" />
-                      <If Condition="[Choice.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="450,728" sap2010:WorkflowViewState.IdRef="If_20">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="Warn" Message="[&quot;Not visible, focusing window&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_71" Message="[&quot;Power Automate Desktop is open, but not visible. If it is present in system tray, open it from there. Asking user to open Power Automate&quot;]" />
+                      <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Ensure PAD is open" ChosenButton="[Choice]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="MessageBox_12" Text="[&quot;Power Automate Desktop is open, but not visible. If it is present in system tray, open it from there and click OK.&quot;]" TopMost="True" />
+                      <If Condition="[Choice.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="450,726" sap2010:WorkflowViewState.IdRef="If_23">
                         <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_149">
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_159">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_56" Message="[&quot;User clicked on OK, checking of PAD is open&quot;]" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_72" Message="[&quot;User clicked on OK, checking of PAD is visible&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_150">
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_160">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_57" Message="[&quot;User clicked Cancel, quitting the process&quot;]" />
-                            <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_3" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_73" Message="[&quot;User clicked Cancel, quitting the process&quot;]" />
+                            <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_5" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,373" sap2010:WorkflowViewState.IdRef="Sequence_162">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_74" Message="[&quot;PAD visible, activating&quot;]" />
+                      <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="354,110" sap2010:WorkflowViewState.IdRef="Activate_2">
+                        <ui:Activate.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e4ad5fa7-d0b3-4e48-a2dc-694c70fa506a" Selector="&lt;wnd app='pad.console.host.exe' aaname='Power Automate' aastate='sizeable, moveable, focusable' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Activate.Target>
+                      </ui:Activate>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <uix:NCheckState DisplayName="Check App State 'Sign in'" Exists="[SignInRequired]" sap:VirtualizedContainerService.HintSize="1016,1352" sap2010:WorkflowViewState.IdRef="NCheckState_8" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1110" sap2010:WorkflowViewState.IdRef="Sequence_165">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Warn" Message="[&quot;User needs to sign in to PAD&quot;]" />
+                      <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Ensure Power Automate is signed into" ChosenButton="[Choice]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="MessageBox_13" Text="[&quot;Please sign in to Power Automate and click OK&quot;]" />
+                      <If Condition="[Choice.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="450,728" sap2010:WorkflowViewState.IdRef="If_25">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_163">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_76" Message="[&quot;User clicked on OK, checking of PAD is open&quot;]" />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_164">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_77" Message="[&quot;User clicked Cancel, quitting the process&quot;]" />
+                            <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_6" />
                           </Sequence>
                         </If.Else>
                       </If>
                     </Sequence>
                   </uix:NCheckState.IfExists>
                   <uix:NCheckState.IfNotExists>
-                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,140" sap2010:WorkflowViewState.IdRef="Sequence_148">
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,140" sap2010:WorkflowViewState.IdRef="Sequence_166">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Break sap:VirtualizedContainerService.HintSize="388,50" sap2010:WorkflowViewState.IdRef="Break_1" />
+                      <ui:Break sap:VirtualizedContainerService.HintSize="388,50" sap2010:WorkflowViewState.IdRef="Break_7" />
                     </Sequence>
                   </uix:NCheckState.IfNotExists>
                   <uix:NCheckState.Target>
@@ -200,41 +294,41 @@
               </Sequence>
             </uix:NCheckState.IfExists>
             <uix:NCheckState.IfNotExists>
-              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="512,1110" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="512,1110" sap2010:WorkflowViewState.IdRef="Sequence_170">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[&quot;Power Automate window is not Open, asking user to open Power Automate&quot;]" />
-                <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Ensure PAD is open" ChosenButton="[Choice]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Please open Power Automate Desktop, make it visible and click OK in this message box.&quot;]" TopMost="True" />
-                <If Condition="[Choice.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="450,728" sap2010:WorkflowViewState.IdRef="If_2">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_78" Message="[&quot;Power Automate window is not Open, asking user to open Power Automate&quot;]" />
+                <ui:MessageBox AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Ensure PAD is open" ChosenButton="[Choice]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;Please launch Power Automate Desktop and click OK.&quot;]" TopMost="True" />
+                <If Condition="[Choice.Equals(&quot;Ok&quot;)]" sap:VirtualizedContainerService.HintSize="450,728" sap2010:WorkflowViewState.IdRef="If_26">
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_168">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_16" Message="[&quot;User clicked on OK, checking of PAD is open&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_79" Message="[&quot;User clicked on OK, checking of PAD is launched&quot;]" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_169">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;User clicked Cancel, quitting the process&quot;]" />
-                      <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_2" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_80" Message="[&quot;User clicked Cancel, quitting the process&quot;]" />
+                      <ui:Break sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Break_8" />
                     </Sequence>
                   </If.Else>
                 </If>
               </Sequence>
             </uix:NCheckState.IfNotExists>
             <uix:NCheckState.Target>
-              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1200, 780" DesignTimeScaleFactor="1" Guid="ba50de28-ef7e-4850-9201-5bcdbc86d041" ImageBase64="" InformativeScreenshot="173dad300f08d7d1740aefb93abf1aa8.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' title='Power Automate' aaname='Power Automate' cls='HwndWrapper*' aastate='sizeable, moveable, focusable' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Visible" />
+              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1200, 780" DesignTimeScaleFactor="1" Guid="ba50de28-ef7e-4850-9201-5bcdbc86d041" InformativeScreenshot="3f2593b39913980d00645423014c48a5.png" ScopeSelectorArgument="&lt;wnd app='pad.console.host.exe' aaname='Power Automate' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
             </uix:NCheckState.Target>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -252,6 +346,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleDoWhile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1740,164" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Info" Message="[&quot;PAD_CheckIfOpenAndSignedIn: END&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1740,164" sap2010:WorkflowViewState.IdRef="LogMessage_81" Level="Info" Message="[&quot;PAD_CheckIfOpenAndSignedIn: END&quot;]" />
   </Sequence>
 </Activity>
